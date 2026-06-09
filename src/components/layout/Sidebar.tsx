@@ -21,7 +21,8 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+  // Komponen navigasi kiri admin yang responsif dan collapsible
+  export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const { profile, logout } = useApp();
