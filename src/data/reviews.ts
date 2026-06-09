@@ -52,7 +52,7 @@ export const initialReviews: Review[] = [
     rating: 4,
     comment: "Tempat yang sangat dramatis dan memukau. Sangat disarankan datang saat sore hari untuk menikmati sunset di balik batu karang raksasa.",
     date: "2023-11-01"
-  }
+  },
   {
     id: "5",
     user: {
@@ -65,7 +65,7 @@ export const initialReviews: Review[] = [
     rating: 5,
     comment: "Tempat terbaik untuk refreshing akhir pekan bersama keluarga. Homestay di sana sangat nyaman dan bersih.",
     date: "2023-11-08"
-  }
+  },
   {
     id: "6",
     user: {
@@ -78,7 +78,7 @@ export const initialReviews: Review[] = [
     rating: 4,
     comment: "Sangat edukatif terutama bagi anak-anak untuk belajar mencintai satwa dan alam.",
     date: "2023-11-02"
-  }
+  },
   {
     id: "7",
     user: {
