@@ -5,6 +5,9 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   error?: string;
 }
 
+/**
+ * Komponen Textarea untuk input teks multi-baris.
+ */
 export default function Textarea({
   label,
   error,
