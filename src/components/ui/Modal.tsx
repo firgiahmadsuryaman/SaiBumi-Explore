@@ -1,10 +1,17 @@
 import React, { useEffect } from "react";
 import { X } from "lucide-react";
 
+/**
+ * Properti untuk komponen Modal.
+ */
 interface ModalProps {
+  /** Menentukan apakah modal sedang terbuka atau tidak */
   isOpen: boolean;
+  /** Callback fungsi yang dipanggil ketika modal ditutup */
   onClose: () => void;
+  /** Judul di bagian header modal */
   title: string;
+  /** Konten yang akan dirender di dalam body modal */
   children: React.ReactNode;
 }
 
