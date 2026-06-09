@@ -1,7 +1,12 @@
 import React from "react";
 
+/**
+ * Properti untuk komponen Button.
+ */
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Varian tampilan visual tombol */
   variant?: "primary" | "secondary" | "outline" | "danger";
+  /** Ukuran padding dan font tombol */
   size?: "sm" | "md" | "lg";
 }
 
