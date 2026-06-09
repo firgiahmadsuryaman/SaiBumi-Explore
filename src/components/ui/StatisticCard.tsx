@@ -11,6 +11,9 @@ interface StatisticCardProps {
   subtext?: string; // e.g. dari bulan lalu
 }
 
+/**
+ * Kartu Statistik untuk menampilkan ringkasan metrik dashboard.
+ */
 export default function StatisticCard({
   title,
   value,
