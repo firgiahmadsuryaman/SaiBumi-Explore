@@ -127,7 +127,7 @@ export default function DestinationsPage() {
               setSearch(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm text-[#0F172A] outline-none transition-all focus:border-primary placeholder:text-gray-400"
+            className="w-full pl-9 pr-4 py-2.5 border border-gray-200 rounded-lg text-sm text-[#0F172A] outline-none transition-all focus:border-primary placeholder:text-gray-400"
           />
         </div>
 
