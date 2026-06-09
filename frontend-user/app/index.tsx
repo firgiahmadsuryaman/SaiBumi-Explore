@@ -60,3 +60,5 @@ export default function SplashScreen() {
 // splash mod 2
 
 // splash mod 3
+
+// timer adjusted
