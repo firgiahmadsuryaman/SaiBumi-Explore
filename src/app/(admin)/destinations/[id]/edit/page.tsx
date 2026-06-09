@@ -42,19 +42,22 @@ export default function EditDestinationPage() {
     if (params?.id) {
       const found = destinations.find((d) => d.id === params.id);
       if (found) {
-        setName(found.name);
-        setCategory(found.category);
-        setDescription(found.description);
-        setAddress(found.address);
-        setLatitude(found.latitude.toString());
-        setLongitude(found.longitude.toString());
-        setTicketPrice(found.ticketPrice.toString());
-        setOpenTime(found.openTime);
-        setCloseTime(found.closeTime);
-        setSelectedFacilities(found.facilities || []);
-        setThumbnail(found.thumbnail);
-        setImages(found.images || []);
-        setLoading(false);
+        const loadData = () => {
+          setName(found.name);
+          setCategory(found.category);
+          setDescription(found.description);
+          setAddress(found.address);
+          setLatitude(found.latitude.toString());
+          setLongitude(found.longitude.toString());
+          setTicketPrice(found.ticketPrice.toString());
+          setOpenTime(found.openTime);
+          setCloseTime(found.closeTime);
+          setSelectedFacilities(found.facilities || []);
+          setThumbnail(found.thumbnail);
+          setImages(found.images || []);
+          setLoading(false);
+        };
+        Promise.resolve().then(loadData);
       } else {
         router.push("/destinations");
       }

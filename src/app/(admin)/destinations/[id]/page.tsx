@@ -14,21 +14,16 @@ export default function DestinationDetailPage() {
   const params = useParams();
   const router = useRouter();
   const { destinations, deleteDestination } = useApp();
-  const [dest, setDest] = useState<Destination | null>(null);
-  
   // Delete Confirmation Modal
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
+  const dest = destinations.find((d) => d.id === params?.id) || null;
+
   useEffect(() => {
-    if (params?.id) {
-      const found = destinations.find((d) => d.id === params.id);
-      if (found) {
-        setDest(found);
-      } else {
-        router.push("/destinations");
-      }
+    if (params?.id && !dest) {
+      router.push("/destinations");
     }
-  }, [params, destinations, router]);
+  }, [params, dest, router]);
 
   if (!dest) {
     return (
