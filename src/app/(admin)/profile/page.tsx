@@ -222,7 +222,7 @@ export default function ProfilePage() {
               <Button
                 onClick={() => setIsPasswordOpen(true)}
                 variant="outline"
-                className="py-1.5 px-3 font-bold text-xs"
+                className="py-1.5 px-3 font-bold text-xs hover:bg-gray-50 transition-colors"
               >
                 Ganti Kata Sandi
               </Button>
