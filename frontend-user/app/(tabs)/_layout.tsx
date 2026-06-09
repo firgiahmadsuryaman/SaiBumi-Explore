@@ -55,3 +55,5 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+// active color explore
