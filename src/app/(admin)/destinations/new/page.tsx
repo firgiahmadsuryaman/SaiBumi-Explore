@@ -336,7 +336,7 @@ export default function CreateDestinationPage() {
         {/* Action Buttons */}
         <div className="flex items-center justify-end gap-3 mt-4">
           <Link href="/destinations">
-            <Button type="button" variant="outline" className="py-2.5 px-5 font-semibold text-sm">
+            <Button type="button" variant="outline" className="py-2.5 px-5 font-semibold text-sm hover:bg-gray-50 transition-colors">
               Batal
             </Button>
           </Link>
