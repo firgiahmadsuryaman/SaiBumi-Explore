@@ -220,7 +220,7 @@ export default function UsersPage() {
           onClose={() => setIsDetailOpen(false)}
           title="Detail Profil Pengguna"
         >
-          <div className="flex flex-col gap-5 items-center text-center">
+          <div className="flex flex-col gap-5 items-center text-center shadow-sm/50 p-2">
             <img
               src={selectedUser.avatar}
               alt={selectedUser.name}
