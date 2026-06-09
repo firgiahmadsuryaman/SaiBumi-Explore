@@ -79,4 +79,17 @@ export const initialReviews: Review[] = [
     comment: "Sangat edukatif terutama bagi anak-anak untuk belajar mencintai satwa dan alam.",
     date: "2023-11-02"
   }
+  {
+    id: "7",
+    user: {
+      name: "Dewi Lestari",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80",
+      email: "dewi.lestari@example.com"
+    },
+    destinationId: "1",
+    destinationName: "Pantai Gigi Hiu",
+    rating: 5,
+    comment: "Keindahan karang yang tiada duanya! Sangat magis ketika diterpa ombak besar.",
+    date: "2023-11-10"
+  }
 ];
