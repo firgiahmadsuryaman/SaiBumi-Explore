@@ -74,11 +74,10 @@ export default function LoginPage() {
       <div className="hidden lg:flex lg:w-1/2 relative bg-primary items-end p-16 text-white overflow-hidden">
         {/* Background Image Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-10000 hover:scale-105"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-10000 hover:scale-105 rounded-l-2xl"
           style={{
             backgroundImage: `linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.2) 60%, rgba(15, 23, 42, 0.1) 100%), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80')`
           }}
-          className="rounded-l-2xl"
         />
 
         {/* Content */}
