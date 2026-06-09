@@ -42,7 +42,7 @@ export default function Modal({
       {/* Modal Container */}
       <div className="bg-white rounded-xl border border-gray-100 shadow-xl w-full max-w-md max-h-[90vh] flex flex-col z-10 animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-gray-50/10">
           <h3 className="text-base font-bold text-[#0F172A]">
             {title}
           </h3>
