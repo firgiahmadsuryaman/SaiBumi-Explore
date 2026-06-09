@@ -50,4 +50,11 @@ export const initialUsers: User[] = [
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
     joinDate: "2023-07-22"
   }
+  {
+    id: "8",
+    name: "Bambang Hermawan",
+    email: "bambang.h@example.com",
+    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80",
+    joinDate: "2023-08-15"
+  }
 ];
