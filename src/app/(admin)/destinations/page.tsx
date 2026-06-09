@@ -55,8 +55,8 @@ export default function DestinationsPage() {
       return matchesSearch && matchesCategory;
     })
     .sort((a, b) => {
-      let valA = a[sortField];
-      let valB = b[sortField];
+      const valA = a[sortField];
+      const valB = b[sortField];
 
       if (typeof valA === "string") {
         return sortDirection === "asc"
