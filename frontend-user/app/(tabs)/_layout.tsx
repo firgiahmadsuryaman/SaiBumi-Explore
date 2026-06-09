@@ -59,3 +59,5 @@ export default function TabLayout() {
 // active color explore
 
 // active color fav
+
+// active color profile
