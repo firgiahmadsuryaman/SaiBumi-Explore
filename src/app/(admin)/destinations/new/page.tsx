@@ -307,7 +307,7 @@ export default function CreateDestinationPage() {
                 placeholder="Masukkan URL foto galeri tambahan"
                 className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:border-primary"
               />
-              <Button type="button" variant="outline" onClick={addImage} className="flex items-center gap-1 text-xs py-2 px-3">
+              <Button type="button" variant="outline" onClick={addImage} className="flex items-center gap-1 text-xs py-2 px-3 hover:bg-gray-100 transition-colors">
                 <Plus size={14} />
                 Tambah
               </Button>
