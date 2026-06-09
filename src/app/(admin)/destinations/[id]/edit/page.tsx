@@ -11,6 +11,7 @@ import Checkbox from "@/components/ui/Checkbox";
 import { ArrowLeft, Plus, Trash2 } from "lucide-react";
 import Link from "next/link";
 
+// Halaman form ubah informasi objek wisata Lampung
 export default function EditDestinationPage() {
   const params = useParams();
   const router = useRouter();
