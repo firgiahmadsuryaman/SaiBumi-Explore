@@ -7,6 +7,7 @@ import Modal from "@/components/ui/Modal";
 import { Search, Plus, Star, Edit, Trash2, Eye, ArrowUpDown, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
+// Halaman kelola objek wisata Lampung: Pencarian, filter, dan tabel data
 export default function DestinationsPage() {
   const { destinations, categories, deleteDestination } = useApp();
 
