@@ -46,6 +46,9 @@ export interface Review {
   date: string;
 }
 
+/**
+ * Informasi data pengguna terdaftar.
+ */
 export interface User {
   id: string;
   name: string;
