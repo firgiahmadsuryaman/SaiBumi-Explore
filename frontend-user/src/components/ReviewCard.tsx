@@ -36,7 +36,7 @@ export default function ReviewCard({ review, showDestination = false }: ReviewCa
               size={10}
               color="#F59E0B"
               fill={star <= rating ? '#F59E0B' : 'transparent'}
-              className="mr-0.5"
+              style={{ marginRight: 2 }}
             />
           ))}
         </View>
@@ -56,9 +56,3 @@ export default function ReviewCard({ review, showDestination = false }: ReviewCa
     </View>
   );
 }
-
-// mod rev 1
-
-// mod rev 2
-
-// mod rev 3

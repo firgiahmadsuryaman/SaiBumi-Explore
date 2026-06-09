@@ -13,7 +13,7 @@ export default function ReviewsScreen() {
   const { id } = useLocalSearchParams();
   const { api, user } = useAuth();
   
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   
   const [rating, setRating] = useState(5);

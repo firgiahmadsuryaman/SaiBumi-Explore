@@ -12,7 +12,7 @@ export default function DestinationDetailScreen() {
   const { id } = useLocalSearchParams();
   const { api } = useAuth();
   const { isFavorite, toggleFavorite } = useFavorites();
-  const [destination, setDestination] = useState(null);
+  const [destination, setDestination] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showFullDesc, setShowFullDesc] = useState(false);
 
@@ -162,7 +162,7 @@ export default function DestinationDetailScreen() {
             <View className="mb-6">
               <Text className="font-poppins font-bold text-textPrimary text-xs mb-3">Fasilitas</Text>
               <View className="flex-row flex-wrap gap-2">
-                {destination.facilities.map((f, idx) => (
+                {destination.facilities.map((f: string, idx: number) => (
                   <View key={idx} className="bg-slate-50 px-3 py-2 rounded-xl border border-slate-100 flex-row items-center">
                     <Text className="font-poppins text-textPrimary text-[10px] font-medium">{f}</Text>
                   </View>

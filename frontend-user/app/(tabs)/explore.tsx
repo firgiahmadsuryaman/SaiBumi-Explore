@@ -16,15 +16,15 @@ export default function ExploreScreen() {
   const { api } = useAuth();
   const { isFavorite, toggleFavorite } = useFavorites();
   
-  const [destinations, setDestinations] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [destinations, setDestinations] = useState<any[]>([]);
+  const [categories, setCategories] = useState<any[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Semua');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (params?.category) {
-      setSelectedCategory(params.category);
+      setSelectedCategory(typeof params.category === 'string' ? params.category : params.category[0]);
     } else {
       setSelectedCategory('Semua');
     }

@@ -16,10 +16,10 @@ export default function EditProfileScreen() {
   const [email, setEmail] = useState(user?.email || '');
   const [phone, setPhone] = useState(user?.phoneNumber || '');
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Record<string, string | undefined>>({});
 
   const validate = () => {
-    const newErrors = {};
+    const newErrors: Record<string, string | undefined> = {};
     if (!name) newErrors.name = 'Nama lengkap wajib diisi';
     if (!email) {
       newErrors.email = 'Email wajib diisi';

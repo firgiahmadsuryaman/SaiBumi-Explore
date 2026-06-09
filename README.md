@@ -71,3 +71,5 @@ Setelah seeding database selesai, gunakan akun berikut untuk masuk ke dashboard 
 - **Password**: `admin123`
 
 *(Catatan: Jika backend API dalam kondisi mati/offline, aplikasi Next.js akan secara otomatis melakukan fallback ke mode offline menggunakan LocalStorage sehingga dashboard CMS tetap dapat dibuka).*
+
+<!-- verifikasi selesai -->

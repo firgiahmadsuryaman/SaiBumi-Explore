@@ -12,8 +12,8 @@ export default function HomeScreen() {
   const router = useRouter();
   const { user, api } = useAuth();
   const { isFavorite, toggleFavorite } = useFavorites();
-  const [categories, setCategories] = useState([]);
-  const [destinations, setDestinations] = useState([]);
+  const [categories, setCategories] = useState<any[]>([]);
+  const [destinations, setDestinations] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 

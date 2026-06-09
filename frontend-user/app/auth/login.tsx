@@ -16,7 +16,7 @@ export default function LoginScreen() {
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
 
   const validate = () => {
-    const newErrors = {};
+    const newErrors: { email?: string; password?: string } = {};
     if (!email) {
       newErrors.email = 'Email wajib diisi';
     } else if (!/\S+@\S+\.\S+/.test(email)) {

@@ -28,7 +28,7 @@ export default function SplashScreen() {
       colors={['#0EA5E9', '#14B8A6']}
       className="flex-1 items-center justify-between py-20"
     >
-      <View /> {/* Spacer */}
+      <View />
 
       <View className="items-center">
         {/* Logo Container */}
