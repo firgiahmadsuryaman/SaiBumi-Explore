@@ -98,7 +98,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right Form */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-8 sm:p-16 bg-gray-50/50">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center p-8 sm:p-16 bg-gray-50/50 md:py-24">
         <div className="w-full max-w-md bg-white p-8 sm:p-10 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-8">
           {/* Header */}
           <div className="flex flex-col gap-2">
