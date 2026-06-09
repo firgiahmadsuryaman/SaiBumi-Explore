@@ -118,3 +118,5 @@ export default function ExploreScreen() {
     </SafeAreaView>
   );
 }
+
+// explore mod 10
