@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 interface SelectOption {
   value: string;
@@ -21,7 +21,8 @@ export default function Select({
   id,
   ...props
 }: SelectProps) {
-  const selectId = id || Math.random().toString(36).substr(2, 9);
+  const generatedId = useId();
+  const selectId = id || generatedId;
   
   return (
     <div className="w-full flex flex-col gap-1.5">
