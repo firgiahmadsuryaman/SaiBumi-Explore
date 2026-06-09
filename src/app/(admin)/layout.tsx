@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar";
 import Navbar from "@/components/layout/Navbar";
 
+// Layout utama admin untuk mengontrol proteksi login dan kerangka layout
 export default function AdminLayout({
   children,
 }: {
