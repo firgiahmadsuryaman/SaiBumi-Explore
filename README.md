@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SaiBumi Explore - Panduan Menjalankan Proyek
 
-## Getting Started
+Repositori ini terdiri dari dua bagian terpisah yang saling terintegrasi:
+1. **frontend-cms**: Dashboard CMS Admin berbasis **Next.js** (berjalan di port `3000`).
+2. **backend-api**: Layanan RESTful API berbasis **NestJS**, **Prisma ORM**, dan **PostgreSQL** (berjalan di port `3001`).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Prasyarat (Prerequisites)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Sebelum menjalankan aplikasi, pastikan Anda telah menginstal:
+* [Node.js](https://nodejs.org/) (versi 18 ke atas)
+* [PostgreSQL](https://www.postgresql.org/) server yang aktif dan berjalan secara lokal (default port `5432`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Langkah 1: Konfigurasi & Menjalankan Backend API
 
-## Learn More
+1. Masuk ke direktori `backend-api`:
+   ```bash
+   cd backend-api
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Konfigurasi variabel lingkungan (*Environment Variables*):
+   - Salin file `.env.example` menjadi `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Buka file `.env` dan sesuaikan kredensial koneksi database PostgreSQL Anda pada `DATABASE_URL`:
+     ```env
+     DATABASE_URL="postgresql://postgres:PASSWORD_ANDA@localhost:5432/saibumi_explore?schema=public"
+     ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Jalankan migrasi skema database Prisma ke PostgreSQL:
+   ```bash
+   npx prisma migrate dev --name init
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Jalankan seeder database untuk memasukkan data admin bawaan, kategori pariwisata, destinasi wisata, dan ulasan awal:
+   ```bash
+   npx prisma db seed
+   ```
 
-## Deploy on Vercel
+5. Jalankan server backend NestJS dalam mode development:
+   ```bash
+   npm run start:dev
+   ```
+   API kini berjalan aktif di [http://localhost:3001](http://localhost:3001).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Langkah 2: Menjalankan Frontend CMS
+
+1. Buka terminal baru dan masuk ke direktori `frontend-cms`:
+   ```bash
+   cd frontend-cms
+   ```
+
+2. Jalankan aplikasi Next.js dalam mode development:
+   ```bash
+   npm run dev
+   ```
+   Website CMS kini berjalan aktif di [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Kredensial Login Admin Default
+
+Setelah seeding database selesai, gunakan akun berikut untuk masuk ke dashboard CMS:
+- **Email**: `admin@saibumi.com`
+- **Password**: `admin123`
+
+*(Catatan: Jika backend API dalam kondisi mati/offline, aplikasi Next.js akan secara otomatis melakukan fallback ke mode offline menggunakan LocalStorage sehingga dashboard CMS tetap dapat dibuka).*
