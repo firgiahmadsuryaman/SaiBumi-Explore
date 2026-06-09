@@ -82,3 +82,5 @@ export default function CategoryCard({
     </TouchableOpacity>
   );
 }
+
+// mod cat 1
