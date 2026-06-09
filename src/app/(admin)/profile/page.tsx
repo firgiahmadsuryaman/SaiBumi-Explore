@@ -7,6 +7,7 @@ import Input from "@/components/ui/Input";
 import Modal from "@/components/ui/Modal";
 import { User, Shield, Key, Bell, Phone, Mail, Edit, Check } from "lucide-react";
 
+// Halaman profil pengguna administratif dan keamanan kata sandi
 export default function ProfilePage() {
   const { profile, updateProfile } = useApp();
 
