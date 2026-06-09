@@ -13,7 +13,7 @@ interface NavbarProps {
   const { profile } = useApp();
 
   return (
-    <header className="sticky top-0 z-20 h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6">
+    <header className="sticky top-0 z-20 h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 shadow-sm/50">
       {/* Left section: Search & Menu toggle */}
       <div className="flex items-center gap-4 flex-1 max-w-md">
         <button
