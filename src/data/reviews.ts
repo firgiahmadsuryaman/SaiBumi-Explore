@@ -53,4 +53,17 @@ export const initialReviews: Review[] = [
     comment: "Tempat yang sangat dramatis dan memukau. Sangat disarankan datang saat sore hari untuk menikmati sunset di balik batu karang raksasa.",
     date: "2023-11-01"
   }
+  {
+    id: "5",
+    user: {
+      name: "Rian Hidayat",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      email: "rian.hidayat@example.com"
+    },
+    destinationId: "2",
+    destinationName: "Pulau Pahawang",
+    rating: 5,
+    comment: "Tempat terbaik untuk refreshing akhir pekan bersama keluarga. Homestay di sana sangat nyaman dan bersih.",
+    date: "2023-11-08"
+  }
 ];
