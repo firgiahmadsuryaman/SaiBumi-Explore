@@ -58,7 +58,7 @@ export default function UsersPage() {
         <Button
           onClick={() => alert("Mengekspor data pengguna...")}
           variant="outline"
-          className="flex items-center gap-2 font-semibold text-xs py-2 px-3 shadow-sm border border-gray-200 text-gray-700 bg-white"
+          className="flex items-center gap-2 font-semibold text-xs py-2 px-3 shadow-sm border border-gray-200 text-gray-700 bg-white rounded-lg hover:bg-gray-50 transition-colors"
         >
           <Download size={15} />
           Ekspor Data
