@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import { MessageSquare, Star, Trash2, Search, Calendar, ShieldAlert } from "lucide-react";
 
+// Halaman kelola ulasan pengguna dengan filter bintang
 export default function ReviewsPage() {
   const { reviews, destinations, deleteReview } = useApp();
 
