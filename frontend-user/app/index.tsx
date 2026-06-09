@@ -52,3 +52,5 @@ export default function SplashScreen() {
     </LinearGradient>
   );
 }
+
+// refined splash
