@@ -57,6 +57,9 @@ export interface User {
   joinDate: string;
 }
 
+/**
+ * Data profil administratif sistem CMS.
+ */
 export interface AdminProfile {
   name: string;
   email: string;
