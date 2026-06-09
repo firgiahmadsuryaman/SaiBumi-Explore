@@ -230,7 +230,7 @@ export default function DestinationsPage() {
                       {dest.reviewsCount} Ulasan
                     </td>
                     <td className="py-3 px-5">
-                      <div className="flex items-center justify-center gap-1.5">
+                      <div className="flex items-center justify-center gap-2 mr-1">
                         <Link href={`/destinations/${dest.id}`}>
                           <button
                             title="Detail"
