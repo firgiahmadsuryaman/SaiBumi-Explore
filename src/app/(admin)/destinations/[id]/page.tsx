@@ -129,7 +129,7 @@ export default function DestinationDetailPage() {
                     <img
                       src={img}
                       alt={`${dest.name} Gallery ${i}`}
-                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 ))}
