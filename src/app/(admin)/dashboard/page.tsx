@@ -95,7 +95,7 @@ export default function DashboardPage() {
       {/* Main Grid: Destinations & Reviews */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Popular Destinations Table */}
-        <div className="xl:col-span-2 bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col gap-5">
+        <div className="xl:col-span-2 bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col gap-5 hover:shadow-md/50 transition-shadow">
           <div className="flex items-center justify-between">
             <h2 className="text-base font-bold text-[#0F172A]">Destinasi Populer</h2>
             <Link
