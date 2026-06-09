@@ -123,7 +123,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setDestinations(updated);
     localStorage.setItem("sb_destinations", JSON.stringify(updated));
   };
-  const deleteDestination = (id: string) => {};
+  const deleteDestination = (id: string) => {
+    const updated = destinations.filter((dest) => dest.id !== id);
+    setDestinations(updated);
+    localStorage.setItem("sb_destinations", JSON.stringify(updated));
+  };
   const addCategory = (name: string) => {};
   const updateCategory = (id: string, name: string) => {};
   const deleteCategory = (id: string) => {};
