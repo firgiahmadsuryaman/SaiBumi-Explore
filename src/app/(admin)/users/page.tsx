@@ -51,7 +51,7 @@ export default function UsersPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex flex-col gap-1.5">
           <h1 className="text-2xl font-bold text-[#0F172A] tracking-tight">Daftar Pengguna</h1>
-          <p className="text-xs text-gray-400 font-semibold">
+          <p className="text-xs text-gray-400/90 font-semibold">
             Kelola data dan pantau status keaktifan pengguna aplikasi SaiBumi Explore.
           </p>
         </div>
