@@ -46,3 +46,5 @@ export default function FavoritesScreen() {
     </SafeAreaView>
   );
 }
+
+// favorites mod 8
