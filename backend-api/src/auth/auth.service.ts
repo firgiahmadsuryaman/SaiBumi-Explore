@@ -53,4 +53,13 @@ export class AuthService {
 
     return { message: 'Kata sandi berhasil diperbarui' };
   }
+
+  async updateProfile(userId: string, data: { name?: string; email?: string; avatar?: string }) {
+    const updated = await this.prisma.user.update({
+      where: { id: userId },
+      data,
+    });
+    const { password, ...result } = updated;
+    return result;
+  }
 }
