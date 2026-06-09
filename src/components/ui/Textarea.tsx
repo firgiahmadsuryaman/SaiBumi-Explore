@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
@@ -13,7 +13,8 @@ export default function Textarea({
   rows = 4,
   ...props
 }: TextareaProps) {
-  const textareaId = id || Math.random().toString(36).substr(2, 9);
+  const generatedId = useId();
+  const textareaId = id || generatedId;
   
   return (
     <div className="w-full flex flex-col gap-1.5">
