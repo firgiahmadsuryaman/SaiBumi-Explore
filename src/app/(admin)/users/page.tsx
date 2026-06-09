@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useApp } from "@/context/AppContext";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
-import { Users, Search, Calendar, Eye, Download, UserCheck, UserPlus, Info } from "lucide-react";
+import { Users, Search, Calendar, Eye, Download, UserCheck, UserPlus } from "lucide-react";
 import { User } from "@/types";
 
 export default function UsersPage() {
