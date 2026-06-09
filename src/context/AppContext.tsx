@@ -155,7 +155,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setReviews(updated);
     localStorage.setItem("sb_reviews", JSON.stringify(updated));
   };
-  const updateProfile = (p: Partial<AdminProfile>) => {};
+  const updateProfile = (p: Partial<AdminProfile>) => {
+    const updated = { ...profile, ...p };
+    setProfile(updated);
+    localStorage.setItem("sb_profile", JSON.stringify(updated));
+  };
 
   return (
     <AppContext.Provider
