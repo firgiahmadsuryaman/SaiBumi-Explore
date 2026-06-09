@@ -143,7 +143,7 @@ export default function UsersPage() {
                         <img
                           src={user.avatar}
                           alt={user.name}
-                          className="w-9 h-9 rounded-full object-cover border border-gray-100 shadow-sm"
+                          className="w-9 h-9 rounded-xl object-cover border border-gray-100 shadow-sm"
                         />
                         <span className="font-semibold text-[#0F172A]">
                           {user.name}
