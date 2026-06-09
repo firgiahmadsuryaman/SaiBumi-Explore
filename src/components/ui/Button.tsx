@@ -19,7 +19,7 @@ export default function Button({
   
   const variants = {
     primary: "bg-primary text-white hover:bg-primary-hover focus:ring-primary/50 transition-all duration-200",
-    secondary: "bg-secondary text-white hover:bg-secondary-hover focus:ring-secondary/50",
+    secondary: "bg-secondary text-white hover:bg-secondary-hover focus:ring-secondary/50 transition-all duration-200",
     outline: "border border-gray-200 text-gray-700 hover:bg-gray-50 focus:ring-gray-300",
     danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500/50"
   };
