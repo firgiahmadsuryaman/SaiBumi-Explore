@@ -201,6 +201,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setReviews(updated);
     localStorage.setItem("sb_reviews", JSON.stringify(updated));
   };
+    /**
+   * Memperbarui data profil admin saat ini.
+   */
   const updateProfile = (p: Partial<AdminProfile>) => {
     const updated = { ...profile, ...p };
     setProfile(updated);
