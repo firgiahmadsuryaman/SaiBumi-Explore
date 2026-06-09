@@ -36,4 +36,11 @@ export const initialUsers: User[] = [
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
     joinDate: "2023-05-12"
   }
+  {
+    id: "6",
+    name: "Yoga Pratama",
+    email: "yoga.pratama@example.com",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    joinDate: "2023-06-18"
+  }
 ];
