@@ -125,7 +125,7 @@ export default function DashboardPage() {
                         <img
                           src={dest.thumbnail}
                           alt={dest.name}
-                          className="w-10 h-10 rounded-lg object-cover border border-gray-100"
+                          className="w-10 h-10 rounded-lg object-cover border border-gray-100 shadow-sm"
                         />
                         <span className="group-hover:text-primary transition-colors">
                           {dest.name}
