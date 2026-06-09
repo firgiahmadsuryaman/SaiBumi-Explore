@@ -11,6 +11,7 @@ import Checkbox from "@/components/ui/Checkbox";
 import { ArrowLeft, Upload, Image as ImageIcon, Plus, Trash2 } from "lucide-react";
 import Link from "next/link";
 
+// Halaman pembuatan destinasi wisata baru
 export default function CreateDestinationPage() {
   const router = useRouter();
   const { categories, addDestination } = useApp();
