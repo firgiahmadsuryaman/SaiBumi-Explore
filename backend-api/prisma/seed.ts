@@ -26,6 +26,71 @@ async function main() {
   });
   console.log(`Admin user berhasil dibuat: ${admin.email}`);
 
+  // Seed Registered Users
+  const dummyPasswordHash = await bcrypt.hash('user123', 10);
+  const registeredUsers = [
+    {
+      name: 'Budi Santoso',
+      email: 'budi.santoso@example.com',
+      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-01-15'),
+    },
+    {
+      name: 'Siti Rahma',
+      email: 'siti.rahma@example.com',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-02-20'),
+    },
+    {
+      name: 'Andi Wijaya',
+      email: 'andi.wijaya@example.com',
+      avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-03-05'),
+    },
+    {
+      name: 'Dewi Lestari',
+      email: 'dewi.lestari@example.com',
+      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-04-10'),
+    },
+    {
+      name: 'Rian Hidayat',
+      email: 'rian.hidayat@example.com',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-05-12'),
+    },
+    {
+      name: 'Yoga Pratama',
+      email: 'yoga.pratama@example.com',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-06-18'),
+    },
+    {
+      name: 'Fitriani',
+      email: 'fitriani@example.com',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-07-22'),
+    },
+    {
+      name: 'Bambang Hermawan',
+      email: 'bambang.h@example.com',
+      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80',
+      joinDate: new Date('2023-08-15'),
+    },
+  ];
+
+  for (const u of registeredUsers) {
+    await prisma.user.create({
+      data: {
+        ...u,
+        password: dummyPasswordHash,
+        role: 'USER',
+        status: 'ACTIVE',
+      },
+    });
+  }
+  console.log(`Berhasil membuat ${registeredUsers.length} pengguna terdaftar.`);
+
   // 3. Seed Categories
   const categoriesData = [
     { name: 'Pantai' },
