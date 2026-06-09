@@ -1,0 +1,52 @@
+export interface Destination {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  address: string;
+  latitude: number;
+  longitude: number;
+  ticketPrice: number;
+  openTime: string;
+  closeTime: string;
+  facilities: string[];
+  thumbnail: string;
+  images: string[];
+  rating: number;
+  reviewsCount: number;
+  createdAt: string;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  totalDestinations: number;
+}
+
+export interface Review {
+  id: string;
+  user: {
+    name: string;
+    avatar: string;
+    email: string;
+  };
+  destinationId: string;
+  destinationName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  avatar: string;
+  joinDate: string;
+}
+
+export interface AdminProfile {
+  name: string;
+  email: string;
+  avatar: string;
+}
