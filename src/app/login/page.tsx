@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { Eye, EyeOff, Compass } from "lucide-react";
 
+// Halaman login admin dengan split layout gambar pantai
 export default function LoginPage() {
   const router = useRouter();
   const { login, isLoggedIn } = useApp();
