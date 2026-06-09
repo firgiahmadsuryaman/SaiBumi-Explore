@@ -69,7 +69,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     return [];
   });
 
-  const [users, setUsers] = useState<User[]>(() => {
+  const [users] = useState<User[]>(() => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("sb_users");
       if (stored) return JSON.parse(stored);
