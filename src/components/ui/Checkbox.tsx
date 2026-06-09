@@ -1,7 +1,12 @@
 import React, { useId } from "react";
 
+/**
+ * Properti untuk komponen Checkbox.
+ */
 interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {
+  /** Label teks di samping checkbox */
   label: string;
+  /** Pesan kesalahan/error yang akan ditampilkan di bawah checkbox */
   error?: string;
 }
 
