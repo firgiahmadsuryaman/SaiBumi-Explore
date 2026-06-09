@@ -141,7 +141,7 @@ export default function DestinationDetailPage() {
         {/* Right Side: Operational details card & Facilities */}
         <div className="flex flex-col gap-6">
           {/* Quick Info Card */}
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-5">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-5 hover:shadow-md/50 transition-shadow">
             <h2 className="text-sm font-bold text-[#0F172A] pb-3 border-b border-gray-50">
               Informasi Singkat
             </h2>
