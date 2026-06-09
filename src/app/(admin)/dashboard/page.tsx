@@ -111,7 +111,7 @@ export default function DashboardPage() {
             <table className="w-full text-left border-collapse shadow-sm/50">
               <thead>
                 <tr className="border-b border-gray-100 text-xs font-semibold text-gray-400">
-                  <th className="pb-3 font-semibold">Nama Destinasi</th>
+                  <th className="pb-3 font-semibold border-b border-gray-100/50">Nama Destinasi</th>
                   <th className="pb-3 font-semibold">Kategori</th>
                   <th className="pb-3 font-semibold text-center">Peringkat</th>
                   <th className="pb-3 font-semibold text-right">Total Ulasan</th>
