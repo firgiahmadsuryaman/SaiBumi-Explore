@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Patch, Delete, Param, Query, Body, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Patch,
+  Delete,
+  Param,
+  Query,
+  Body,
+  UseGuards,
+} from '@nestjs/common';
 import { DestinationService } from './destination.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
@@ -8,7 +18,10 @@ export class DestinationController {
   constructor(private destinationService: DestinationService) {}
 
   @Get()
-  async findAll(@Query('search') search?: string, @Query('category') category?: string) {
+  async findAll(
+    @Query('search') search?: string,
+    @Query('category') category?: string,
+  ) {
     return this.destinationService.findAll(search, category);
   }
 

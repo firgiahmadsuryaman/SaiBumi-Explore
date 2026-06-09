@@ -15,7 +15,11 @@ export class AuthService {
       where: { email },
     });
 
-    if (user && user.status === 'ACTIVE' && (await bcrypt.compare(pass, user.password))) {
+    if (
+      user &&
+      user.status === 'ACTIVE' &&
+      (await bcrypt.compare(pass, user.password))
+    ) {
       const { password, ...result } = user;
       return result;
     }
@@ -54,12 +58,43 @@ export class AuthService {
     return { message: 'Kata sandi berhasil diperbarui' };
   }
 
-  async updateProfile(userId: string, data: { name?: string; email?: string; avatar?: string }) {
+  async updateProfile(
+    userId: string,
+    data: {
+      name?: string;
+      email?: string;
+      avatar?: string;
+      phoneNumber?: string;
+    },
+  ) {
     const updated = await this.prisma.user.update({
       where: { id: userId },
       data,
     });
     const { password, ...result } = updated;
     return result;
+  }
+
+  async register(data: any) {
+    const { name, email, password, phoneNumber } = data;
+    const existing = await this.prisma.user.findUnique({
+      where: { email },
+    });
+    if (existing) {
+      throw new UnauthorizedException('Email sudah terdaftar');
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await this.prisma.user.create({
+      data: {
+        name,
+        email,
+        password: hashedPassword,
+        phoneNumber,
+        role: 'USER',
+        status: 'ACTIVE',
+      },
+    });
+    const { password: _, ...result } = user;
+    return this.login(result);
   }
 }

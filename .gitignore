@@ -55,3 +55,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Expo files
+.expo/
+**/.expo/
+web-build/
+**/web-build/
+
+# Native builds
+ios/
+**/ios/
+android/
+**/android/
+
+# Credentials & keystores
+*.jks
+*.p8
+*.key
+*.mobileprovision
+
+# Outputs
+*.apk
+*.aab
+*.ipa

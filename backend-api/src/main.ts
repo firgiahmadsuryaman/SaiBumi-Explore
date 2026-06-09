@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   // Aktifkan CORS agar frontend Next.js dapat melakukan fetch request
   app.enableCors({
     origin: '*', // Di produksi harap batasi dengan origin yang spesifik

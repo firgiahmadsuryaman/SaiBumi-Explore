@@ -1,4 +1,14 @@
-import { Controller, Get, Delete, Param, Query, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Delete,
+  Param,
+  Query,
+  Body,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
 import { ReviewService } from './review.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
@@ -8,8 +18,21 @@ export class ReviewController {
   constructor(private reviewService: ReviewService) {}
 
   @Get()
-  async findAll(@Query('rating') rating?: number, @Query('destinationId') destinationId?: string) {
+  async findAll(
+    @Query('rating') rating?: number,
+    @Query('destinationId') destinationId?: string,
+  ) {
     return this.reviewService.findAll(rating, destinationId);
+  }
+
+  @Get('my')
+  async getMy(@Request() req: any) {
+    return this.reviewService.getMyReviews(req.user.email);
+  }
+
+  @Post()
+  async create(@Request() req: any, @Body() body: any) {
+    return this.reviewService.create(req.user.userId, body);
   }
 
   @Delete(':id')

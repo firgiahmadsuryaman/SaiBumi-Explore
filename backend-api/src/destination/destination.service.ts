@@ -134,9 +134,12 @@ export class DestinationService {
       delete updateData.category;
     }
 
-    if (data.latitude !== undefined) updateData.latitude = Number(data.latitude);
-    if (data.longitude !== undefined) updateData.longitude = Number(data.longitude);
-    if (data.ticketPrice !== undefined) updateData.ticketPrice = Number(data.ticketPrice);
+    if (data.latitude !== undefined)
+      updateData.latitude = Number(data.latitude);
+    if (data.longitude !== undefined)
+      updateData.longitude = Number(data.longitude);
+    if (data.ticketPrice !== undefined)
+      updateData.ticketPrice = Number(data.ticketPrice);
 
     const updated = await this.prisma.destination.update({
       where: { id },

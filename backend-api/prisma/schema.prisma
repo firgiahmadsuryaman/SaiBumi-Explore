@@ -7,14 +7,16 @@ generator client {
 }
 
 model User {
-  id       String   @id @default(uuid())
-  name     String
-  email    String   @unique
-  password String
-  avatar   String   @default("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80")
-  role     String   @default("ADMIN") // ADMIN | SUPER_ADMIN
-  status   String   @default("ACTIVE") // ACTIVE | INACTIVE
-  joinDate DateTime @default(now())
+  id          String     @id @default(uuid())
+  name        String
+  email       String     @unique
+  password    String
+  phoneNumber String?
+  avatar      String     @default("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80")
+  role        String     @default("ADMIN") // ADMIN | SUPER_ADMIN | USER
+  status      String     @default("ACTIVE") // ACTIVE | INACTIVE
+  joinDate    DateTime   @default(now())
+  favorites   Favorite[]
 }
 
 model Category {
@@ -41,6 +43,7 @@ model Destination {
   rating       Float    @default(0.0)
   reviewsCount Int      @default(0)
   reviews      Review[]
+  favorites    Favorite[]
   createdAt    DateTime @default(now())
 }
 
@@ -54,4 +57,15 @@ model Review {
   rating        Int
   comment       String
   createdAt     DateTime    @default(now())
+}
+
+model Favorite {
+  id            String      @id @default(uuid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now())
+
+  @@unique([userId, destinationId])
 }
