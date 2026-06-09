@@ -1,0 +1,87 @@
+import { Destination } from "@/types";
+
+export const initialDestinations: Destination[] = [
+  {
+    id: "1",
+    name: "Pantai Gigi Hiu",
+    category: "Pantai",
+    description: "Pantai Gigi Hiu menawarkan pemandangan tebing batu karang yang menjulang tinggi seperti deretan gigi hiu di tepi pantai. Sangat cocok bagi pecinta fotografi dan petualangan.",
+    address: "Kecamatan Kelumbayan, Kabupaten Tanggamus, Lampung",
+    latitude: -5.7654,
+    longitude: 104.9876,
+    ticketPrice: 15000,
+    openTime: "06:00",
+    closeTime: "18:00",
+    facilities: ["Area Parkir", "Toilet", "Spot Foto"],
+    thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1471922639839-be7462f54e5e?auto=format&fit=crop&w=600&q=80"
+    ],
+    rating: 4.8,
+    reviewsCount: 142,
+    createdAt: "2023-10-12"
+  },
+  {
+    id: "2",
+    name: "Pulau Pahawang",
+    category: "Pantai",
+    description: "Pulau Pahawang terkenal dengan keindahan terumbu karang bawah lautnya yang menakjubkan dan air laut yang sangat jernih. Tempat favorit untuk snorkeling.",
+    address: "Kecamatan Marga Punduh, Kabupaten Pesawaran, Lampung",
+    latitude: -5.6789,
+    longitude: 105.2134,
+    ticketPrice: 50000,
+    openTime: "07:00",
+    closeTime: "17:00",
+    facilities: ["Area Parkir", "Toilet", "Restoran", "Spot Foto", "Penginapan"],
+    thumbnail: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80"
+    ],
+    rating: 4.7,
+    reviewsCount: 289,
+    createdAt: "2023-08-24"
+  },
+  {
+    id: "3",
+    name: "Taman Nasional Way Kambas",
+    category: "Alam",
+    description: "Pusat konservasi dan penangkaran gajah sumatera yang terkenal secara nasional dan internasional. Pengunjung dapat melihat pelatihan gajah secara langsung.",
+    address: "Kecamatan Labuhan Ratu, Kabupaten Lampung Timur, Lampung",
+    latitude: -5.0123,
+    longitude: 105.7891,
+    ticketPrice: 30000,
+    openTime: "08:00",
+    closeTime: "16:00",
+    facilities: ["Area Parkir", "Mushola", "Toilet", "Restoran", "Spot Foto"],
+    thumbnail: "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=600&q=80"
+    ],
+    rating: 4.6,
+    reviewsCount: 421,
+    createdAt: "2023-05-15"
+  },
+  {
+    id: "4",
+    name: "Gunung Anak Krakatau",
+    category: "Gunung",
+    description: "Gunung berapi aktif legendaris yang terletak di Selat Sunda. Menawarkan petualangan mendaki dan menyaksikan keindahan alam vulkanis yang mempesona.",
+    address: "Selat Sunda, Kabupaten Lampung Selatan, Lampung",
+    latitude: -6.1021,
+    longitude: 105.4231,
+    ticketPrice: 100000,
+    openTime: "00:00",
+    closeTime: "23:59",
+    facilities: ["Spot Foto", "Penginapan"],
+    thumbnail: "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=600&q=80"
+    ],
+    rating: 4.9,
+    reviewsCount: 95,
+    createdAt: "2023-11-02"
+  }
+];
