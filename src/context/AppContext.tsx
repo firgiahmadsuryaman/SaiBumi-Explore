@@ -108,6 +108,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+    /**
+   * Memvalidasi kredensial login admin.
+   */
   const login = (email: string, password: string): boolean => {
     // Mock login validation
     if (email === "admin@saibumi.com" && password === "admin123") {
