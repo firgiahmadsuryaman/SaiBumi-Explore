@@ -88,7 +88,7 @@ export default function ReviewsPage() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* Total Ulasan */}
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-center gap-4">
+        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md/50 transition-shadow flex items-center gap-4">
           <div className="p-3 rounded-lg bg-sky-50 text-primary">
             <MessageSquare size={20} />
           </div>
