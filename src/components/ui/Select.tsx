@@ -1,14 +1,26 @@
 import React, { useId } from "react";
 
+/**
+ * Opsi dropdown untuk komponen Select.
+ */
 interface SelectOption {
+  /** Nilai internal opsi */
   value: string;
+  /** Label tampilan visual opsi */
   label: string;
 }
 
+/**
+ * Properti untuk komponen Select.
+ */
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  /** Label teks di atas field select */
   label?: string;
+  /** Daftar opsi dropdown */
   options: SelectOption[];
+  /** Pesan kesalahan/error yang akan ditampilkan di bawah field select */
   error?: string;
+  /** Teks penampung default saat tidak ada opsi terpilih */
   placeholder?: string;
 }
 
