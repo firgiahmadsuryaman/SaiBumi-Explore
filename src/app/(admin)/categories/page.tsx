@@ -8,6 +8,7 @@ import Modal from "@/components/ui/Modal";
 import { FolderOpen, Plus, Edit, Trash2, Tag, Trophy, ArrowRight } from "lucide-react";
 import { Category } from "@/types";
 
+// Halaman kelola kategori wisata: Statistik dan tabel CRUD
 export default function CategoriesPage() {
   const { categories, addCategory, updateCategory, deleteCategory } = useApp();
 
