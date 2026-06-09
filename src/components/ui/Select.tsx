@@ -12,6 +12,9 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   placeholder?: string;
 }
 
+/**
+ * Komponen Dropdown Select dengan dukungan label.
+ */
 export default function Select({
   label,
   options,
