@@ -1,0 +1,57 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       String   @id @default(uuid())
+  name     String
+  email    String   @unique
+  password String
+  avatar   String   @default("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80")
+  role     String   @default("ADMIN") // ADMIN | SUPER_ADMIN
+  status   String   @default("ACTIVE") // ACTIVE | INACTIVE
+  joinDate DateTime @default(now())
+}
+
+model Category {
+  id           String        @id @default(uuid())
+  name         String        @unique
+  destinations Destination[]
+}
+
+model Destination {
+  id           String   @id @default(uuid())
+  name         String
+  categoryId   String
+  category     Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  description  String
+  address      String
+  latitude     Float
+  longitude    Float
+  ticketPrice  Float
+  openTime     String
+  closeTime    String
+  facilities   String[]
+  thumbnail    String
+  images       String[]
+  rating       Float    @default(0.0)
+  reviewsCount Int      @default(0)
+  reviews      Review[]
+  createdAt    DateTime @default(now())
+}
+
+model Review {
+  id            String      @id @default(uuid())
+  userName      String
+  userAvatar    String      @default("https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80")
+  userEmail     String
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+  rating        Int
+  comment       String
+  createdAt     DateTime    @default(now())
+}
