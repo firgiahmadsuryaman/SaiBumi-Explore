@@ -1,14 +1,25 @@
 import React from "react";
 
+/**
+ * Properti untuk komponen StatisticCard.
+ */
 interface StatisticCardProps {
+  /** Judul metrik statistik */
   title: string;
+  /** Nilai statistik yang ditampilkan */
   value: string | number;
+  /** Ikon Lucide React atau elemen node visual lainnya */
   icon: React.ReactNode;
-  iconBgColor?: string; // e.g. bg-blue-100
-  iconColor?: string; // e.g. text-blue-600
-  trend?: string; // e.g. + 24%
+  /** Kelas latar belakang warna kontainer ikon (contoh: bg-blue-50) */
+  iconBgColor?: string;
+  /** Kelas warna ikon teks (contoh: text-blue-600) */
+  iconColor?: string;
+  /** Nilai tren persentase atau perubahan (contoh: + 12%) */
+  trend?: string;
+  /** Arah panah tren untuk menentukan styling warna */
   trendDirection?: "up" | "down" | "neutral";
-  subtext?: string; // e.g. dari bulan lalu
+  /** Deskripsi tambahan yang mendampingi tren */
+  subtext?: string;
 }
 
 /**
