@@ -104,8 +104,18 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     localStorage.removeItem("sb_isLoggedIn");
   };
 
-  // CRUD functions placeholder
-  const addDestination = (d: any) => {};
+  const addDestination = (d: Omit<Destination, "id" | "rating" | "reviewsCount" | "createdAt">) => {
+    const newDest: Destination = {
+      ...d,
+      id: Math.random().toString(36).substr(2, 9),
+      rating: 0,
+      reviewsCount: 0,
+      createdAt: new Date().toISOString().split("T")[0]
+    };
+    const updated = [newDest, ...destinations];
+    setDestinations(updated);
+    localStorage.setItem("sb_destinations", JSON.stringify(updated));
+  };
   const updateDestination = (id: string, d: any) => {};
   const deleteDestination = (id: string) => {};
   const addCategory = (name: string) => {};
