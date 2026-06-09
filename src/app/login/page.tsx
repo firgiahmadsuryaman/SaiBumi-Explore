@@ -11,10 +11,20 @@ export default function LoginPage() {
   const router = useRouter();
   const { login, isLoggedIn } = useApp();
   
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("sb_remembered_email") || "";
+    }
+    return "";
+  });
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMe, setRememberMe] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("sb_remembered_email") !== null;
+    }
+    return false;
+  });
   const [errors, setErrors] = useState<{ email?: string; password?: string; general?: string }>({});
 
   useEffect(() => {
@@ -56,14 +66,6 @@ export default function LoginPage() {
       setErrors({ general: "Email atau kata sandi salah" });
     }
   };
-
-  useEffect(() => {
-    const rememberedEmail = localStorage.getItem("sb_remembered_email");
-    if (rememberedEmail) {
-      setEmail(rememberedEmail);
-      setRememberMe(true);
-    }
-  }, []);
 
   return (
     <div className="min-h-screen w-full flex bg-white">
