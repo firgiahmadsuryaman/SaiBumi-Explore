@@ -7,6 +7,7 @@ import Modal from "@/components/ui/Modal";
 import { Users, Search, Calendar, Eye, Download, UserCheck, UserPlus } from "lucide-react";
 import { User } from "@/types";
 
+// Halaman daftar pengguna terdaftar beserta info status
 export default function UsersPage() {
   const { users } = useApp();
 
