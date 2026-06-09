@@ -5,6 +5,9 @@ interface CheckboxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>
   error?: string;
 }
 
+/**
+ * Komponen Checkbox untuk pilihan biner.
+ */
 export default function Checkbox({
   label,
   error,
