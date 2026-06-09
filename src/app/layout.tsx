@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { AppProvider } from "@/context/AppContext";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -20,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full bg-[#F8FAFC] text-[#0F172A]">{children}</body>
+      <body className="min-h-full bg-[#F8FAFC] text-[#0F172A]">
+        <AppProvider>
+          {children}
+        </AppProvider>
+      </body>
     </html>
   );
 }
