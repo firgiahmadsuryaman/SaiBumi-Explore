@@ -185,6 +185,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setCategories(updated);
     localStorage.setItem("sb_categories", JSON.stringify(updated));
   };
+    /**
+   * Menghapus kategori berdasarkan ID.
+   */
   const deleteCategory = (id: string) => {
     const updated = categories.filter((cat) => cat.id !== id);
     setCategories(updated);
