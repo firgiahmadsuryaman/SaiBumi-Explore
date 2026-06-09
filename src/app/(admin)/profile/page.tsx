@@ -214,7 +214,7 @@ export default function ProfilePage() {
               Keamanan Akun
             </h3>
 
-            <div className="flex items-center justify-between text-xs font-semibold py-1">
+            <div className="flex items-center justify-between text-xs font-semibold py-2.5">
               <div className="flex flex-col gap-0.5">
                 <span className="text-gray-400">Kata Sandi</span>
                 <span className="text-[#0F172A] font-bold">Terakhir diubah 3 bulan yang lalu</span>
