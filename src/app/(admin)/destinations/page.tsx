@@ -139,7 +139,7 @@ export default function DestinationsPage() {
               setSelectedCategory(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full md:w-48 px-3 py-2 border border-gray-200 rounded-lg text-sm text-[#0F172A] outline-none bg-white focus:border-primary"
+            className="w-full md:w-48 px-3 py-2 border border-gray-200 rounded-lg text-sm text-[#0F172A] outline-none bg-white focus:border-primary shadow-sm/30"
           >
             <option value="">Semua Kategori</option>
             {categories.map((cat) => (
