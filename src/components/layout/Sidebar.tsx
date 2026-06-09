@@ -87,7 +87,7 @@ interface SidebarProps {
                 key={item.name}
                 href={item.href}
                 onClick={onClose}
-                className={`flex items-center gap-3.5 px-4 py-3 rounded-lg text-sm font-semibold transition-all relative ${
+                className={`flex items-center gap-3.5 px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200 relative ${
                   isActive
                     ? "text-primary bg-sky-50/70"
                     : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
