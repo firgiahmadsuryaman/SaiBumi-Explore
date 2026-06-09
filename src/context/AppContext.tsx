@@ -175,6 +175,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setCategories(updated);
     localStorage.setItem("sb_categories", JSON.stringify(updated));
   };
+    /**
+   * Memperbarui nama kategori berdasarkan ID.
+   */
   const updateCategory = (id: string, name: string) => {
     const updated = categories.map((cat) =>
       cat.id === id ? { ...cat, name } : cat
