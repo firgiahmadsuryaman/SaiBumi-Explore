@@ -129,6 +129,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     localStorage.removeItem("sb_isLoggedIn");
   };
 
+    /**
+   * Menambahkan destinasi wisata baru ke state.
+   */
   const addDestination = (d: Omit<Destination, "id" | "rating" | "reviewsCount" | "createdAt">) => {
     const newDest: Destination = {
       ...d,
