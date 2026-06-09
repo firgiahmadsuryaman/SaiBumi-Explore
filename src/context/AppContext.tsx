@@ -116,7 +116,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setDestinations(updated);
     localStorage.setItem("sb_destinations", JSON.stringify(updated));
   };
-  const updateDestination = (id: string, d: any) => {};
+  const updateDestination = (id: string, d: Partial<Destination>) => {
+    const updated = destinations.map((dest) =>
+      dest.id === id ? { ...dest, ...d } : dest
+    );
+    setDestinations(updated);
+    localStorage.setItem("sb_destinations", JSON.stringify(updated));
+  };
   const deleteDestination = (id: string) => {};
   const addCategory = (name: string) => {};
   const updateCategory = (id: string, name: string) => {};
