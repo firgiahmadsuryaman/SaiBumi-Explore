@@ -121,6 +121,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     return false;
   };
 
+    /**
+   * Mengeluarkan admin dari sesi aktif.
+   */
   const logout = () => {
     setIsLoggedIn(false);
     localStorage.removeItem("sb_isLoggedIn");
