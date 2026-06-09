@@ -62,3 +62,5 @@ export const FavoriteProvider = ({ children }: any) => {
 };
 
 export const useFavorites = () => useContext(FavoriteContext);
+
+// mod favctx 1
