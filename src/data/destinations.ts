@@ -83,7 +83,7 @@ export const initialDestinations: Destination[] = [
     rating: 4.9,
     reviewsCount: 95,
     createdAt: "2023-11-02"
-  }
+  },
   {
     id: "5",
     name: "Kawah Keramikan Suoh",
@@ -101,7 +101,7 @@ export const initialDestinations: Destination[] = [
     rating: 4.5,
     reviewsCount: 38,
     createdAt: "2023-09-02"
-  }
+  },
   {
     id: "6",
     name: "Air Terjun Curup Tujuh",
@@ -119,7 +119,7 @@ export const initialDestinations: Destination[] = [
     rating: 4.4,
     reviewsCount: 29,
     createdAt: "2023-07-18"
-  }
+  },
   {
     id: "7",
     name: "Teluk Kiluan",
@@ -137,7 +137,7 @@ export const initialDestinations: Destination[] = [
     rating: 4.8,
     reviewsCount: 167,
     createdAt: "2023-06-25"
-  }
+  },
   {
     id: "8",
     name: "Danau Ranau",
