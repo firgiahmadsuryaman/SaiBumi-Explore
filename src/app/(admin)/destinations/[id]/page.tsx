@@ -9,6 +9,7 @@ import { ArrowLeft, Edit, Trash2, MapPin, Calendar, Clock, Ticket, CheckSquare, 
 import Link from "next/link";
 import { Destination } from "@/types";
 
+// Halaman detail informasi lengkap objek wisata
 export default function DestinationDetailPage() {
   const params = useParams();
   const router = useRouter();
