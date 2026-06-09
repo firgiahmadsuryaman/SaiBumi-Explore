@@ -78,6 +78,7 @@ export default function LoginPage() {
           style={{
             backgroundImage: `linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.2) 60%, rgba(15, 23, 42, 0.1) 100%), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80')`
           }}
+          className="rounded-l-2xl"
         />
 
         {/* Content */}
