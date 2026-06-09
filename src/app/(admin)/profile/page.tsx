@@ -129,7 +129,7 @@ export default function ProfilePage() {
               {!isEditing ? (
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="flex items-center gap-1.5 text-xs font-bold text-primary hover:underline"
+                  className="flex items-center gap-1.5 text-xs font-bold text-primary hover:underline hover:text-primary-hover transition-colors"
                 >
                   <Edit size={14} />
                   Edit Profil
