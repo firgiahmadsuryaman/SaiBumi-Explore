@@ -208,3 +208,5 @@ export default function DestinationDetailScreen() {
     </View>
   );
 }
+
+// maps integrated
