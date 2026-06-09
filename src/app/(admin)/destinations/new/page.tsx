@@ -285,7 +285,7 @@ export default function CreateDestinationPage() {
             <img
               src={thumbnail || "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"}
               alt="Thumbnail preview"
-              className="w-24 h-24 rounded-lg object-cover border border-gray-200"
+              className="w-24 h-24 rounded-xl object-cover border border-gray-200 shadow-sm"
               onError={(e) => {
                 // fall back
                 (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1471922639839-be7462f54e5e?auto=format&fit=crop&w=600&q=80";
