@@ -66,4 +66,17 @@ export const initialReviews: Review[] = [
     comment: "Tempat terbaik untuk refreshing akhir pekan bersama keluarga. Homestay di sana sangat nyaman dan bersih.",
     date: "2023-11-08"
   }
+  {
+    id: "6",
+    user: {
+      name: "Siti Rahma",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+      email: "siti.rahma@example.com"
+    },
+    destinationId: "3",
+    destinationName: "Taman Nasional Way Kambas",
+    rating: 4,
+    comment: "Sangat edukatif terutama bagi anak-anak untuk belajar mencintai satwa dan alam.",
+    date: "2023-11-02"
+  }
 ];
