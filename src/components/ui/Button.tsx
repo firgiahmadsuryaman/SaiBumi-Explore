@@ -5,6 +5,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
 }
 
+/**
+ * Komponen Tombol UI Kustom dengan beberapa varian visual.
+ */
 export default function Button({
   children,
   variant = "primary",
