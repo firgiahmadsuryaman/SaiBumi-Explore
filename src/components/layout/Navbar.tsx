@@ -42,7 +42,7 @@ interface NavbarProps {
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-primary bg-sky-50 rounded-lg hover:bg-sky-100 transition-colors"
+          className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-primary bg-sky-50 rounded-lg hover:bg-sky-100 transition-colors duration-200"
         >
           Buka Situs
           <ExternalLink size={12} />
