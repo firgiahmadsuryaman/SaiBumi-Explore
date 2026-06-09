@@ -84,4 +84,22 @@ export const initialDestinations: Destination[] = [
     reviewsCount: 95,
     createdAt: "2023-11-02"
   }
+  {
+    id: "5",
+    name: "Kawah Keramikan Suoh",
+    category: "Alam",
+    description: "Kawah dengan formasi batuan silika belerang menyerupai ubin keramik yang unik di kawasan vulkanis Suoh.",
+    address: "Kecamatan Suoh, Kabupaten Lampung Barat, Lampung",
+    latitude: -5.2345,
+    longitude: 104.2345,
+    ticketPrice: 10000,
+    openTime: "07:00",
+    closeTime: "16:30",
+    facilities: ["Area Parkir", "Toilet", "Spot Foto"],
+    thumbnail: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
+    images: [],
+    rating: 4.5,
+    reviewsCount: 38,
+    createdAt: "2023-09-02"
+  }
 ];
