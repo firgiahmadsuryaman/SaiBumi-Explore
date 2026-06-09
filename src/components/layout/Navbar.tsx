@@ -8,7 +8,8 @@ interface NavbarProps {
   onMenuToggle: () => void;
 }
 
-export default function Navbar({ onMenuToggle }: NavbarProps) {
+  // Komponen header navbar atas dengan info profil dan notifikasi
+  export default function Navbar({ onMenuToggle }: NavbarProps) {
   const { profile } = useApp();
 
   return (
