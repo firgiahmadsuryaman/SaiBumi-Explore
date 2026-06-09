@@ -8,6 +8,9 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
+/**
+ * Dialog Modal Reusable dengan backdrop blur.
+ */
 export default function Modal({
   isOpen,
   onClose,
