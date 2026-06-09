@@ -20,6 +20,9 @@ export interface Destination {
   createdAt: string;
 }
 
+/**
+ * Kategori klasifikasi tempat wisata.
+ */
 export interface Category {
   id: string;
   name: string;
