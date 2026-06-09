@@ -11,7 +11,7 @@ import { AuthController } from './auth.controller';
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET || 'saibumi_explore_secret_key_12345',
-      signOptions: { expiresIn: process.env.JWT_EXPIRATION || '24h' },
+      signOptions: { expiresIn: (process.env.JWT_EXPIRATION || '24h') as any },
     }),
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy],
