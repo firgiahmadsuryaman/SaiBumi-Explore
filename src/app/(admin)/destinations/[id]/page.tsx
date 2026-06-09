@@ -5,9 +5,8 @@ import { useParams, useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
-import { ArrowLeft, Edit, Trash2, MapPin, Calendar, Clock, Ticket, CheckSquare, Star, Image as ImageIcon } from "lucide-react";
+import { ArrowLeft, Edit, Trash2, MapPin, Clock, Ticket, CheckSquare, Star, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
-import { Destination } from "@/types";
 
 // Halaman detail informasi lengkap objek wisata
 export default function DestinationDetailPage() {
