@@ -340,7 +340,7 @@ export default function CreateDestinationPage() {
               Batal
             </Button>
           </Link>
-          <Button type="submit" variant="primary" className="py-2.5 px-6 font-semibold text-sm">
+          <Button type="submit" variant="primary" className="py-2.5 px-6 font-semibold text-sm hover:bg-primary-hover transition-colors">
             Simpan Destinasi
           </Button>
         </div>
