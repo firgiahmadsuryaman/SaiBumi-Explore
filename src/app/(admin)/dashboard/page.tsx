@@ -108,7 +108,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full text-left border-collapse shadow-sm/50">
               <thead>
                 <tr className="border-b border-gray-100 text-xs font-semibold text-gray-400">
                   <th className="pb-3 font-semibold">Nama Destinasi</th>
