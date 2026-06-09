@@ -35,57 +35,76 @@ const defaultProfile: AdminProfile = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [destinations, setDestinations] = useState<Destination[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [users, setUsers] = useState<User[]>([]);
-  const [profile, setProfile] = useState<AdminProfile>(defaultProfile);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("sb_isLoggedIn") === "true";
+    }
+    return false;
+  });
 
-  // Load initial data from localStorage if exists, else use mock data
+  const [destinations, setDestinations] = useState<Destination[]>(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("sb_destinations");
+      if (stored) return JSON.parse(stored);
+      return initialDestinations;
+    }
+    return [];
+  });
+
+  const [categories, setCategories] = useState<Category[]>(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("sb_categories");
+      if (stored) return JSON.parse(stored);
+      return initialCategories;
+    }
+    return [];
+  });
+
+  const [reviews, setReviews] = useState<Review[]>(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("sb_reviews");
+      if (stored) return JSON.parse(stored);
+      return initialReviews;
+    }
+    return [];
+  });
+
+  const [users, setUsers] = useState<User[]>(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("sb_users");
+      if (stored) return JSON.parse(stored);
+      return initialUsers;
+    }
+    return [];
+  });
+
+  const [profile, setProfile] = useState<AdminProfile>(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("sb_profile");
+      if (stored) return JSON.parse(stored);
+      return defaultProfile;
+    }
+    return defaultProfile;
+  });
+
+  // Write default mock data to localStorage if empty
   useEffect(() => {
-    const storedAuth = localStorage.getItem("sb_isLoggedIn");
-    if (storedAuth === "true") {
-      setIsLoggedIn(true);
-    }
-
-    const storedDestinations = localStorage.getItem("sb_destinations");
-    if (storedDestinations) {
-      setDestinations(JSON.parse(storedDestinations));
-    } else {
-      setDestinations(initialDestinations);
-      localStorage.setItem("sb_destinations", JSON.stringify(initialDestinations));
-    }
-
-    const storedCategories = localStorage.getItem("sb_categories");
-    if (storedCategories) {
-      setCategories(JSON.parse(storedCategories));
-    } else {
-      setCategories(initialCategories);
-      localStorage.setItem("sb_categories", JSON.stringify(initialCategories));
-    }
-
-    const storedReviews = localStorage.getItem("sb_reviews");
-    if (storedReviews) {
-      setReviews(JSON.parse(storedReviews));
-    } else {
-      setReviews(initialReviews);
-      localStorage.setItem("sb_reviews", JSON.stringify(initialReviews));
-    }
-
-    const storedUsers = localStorage.getItem("sb_users");
-    if (storedUsers) {
-      setUsers(JSON.parse(storedUsers));
-    } else {
-      setUsers(initialUsers);
-      localStorage.setItem("sb_users", JSON.stringify(initialUsers));
-    }
-
-    const storedProfile = localStorage.getItem("sb_profile");
-    if (storedProfile) {
-      setProfile(JSON.parse(storedProfile));
-    } else {
-      localStorage.setItem("sb_profile", JSON.stringify(defaultProfile));
+    if (typeof window !== "undefined") {
+      if (!localStorage.getItem("sb_destinations")) {
+        localStorage.setItem("sb_destinations", JSON.stringify(initialDestinations));
+      }
+      if (!localStorage.getItem("sb_categories")) {
+        localStorage.setItem("sb_categories", JSON.stringify(initialCategories));
+      }
+      if (!localStorage.getItem("sb_reviews")) {
+        localStorage.setItem("sb_reviews", JSON.stringify(initialReviews));
+      }
+      if (!localStorage.getItem("sb_users")) {
+        localStorage.setItem("sb_users", JSON.stringify(initialUsers));
+      }
+      if (!localStorage.getItem("sb_profile")) {
+        localStorage.setItem("sb_profile", JSON.stringify(defaultProfile));
+      }
     }
   }, []);
 
