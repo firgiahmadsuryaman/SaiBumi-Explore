@@ -63,3 +63,5 @@ export default function OnboardingScreen() {
 // refined onboarding
 
 // onboarding mod 1
+
+// onboarding mod 2
