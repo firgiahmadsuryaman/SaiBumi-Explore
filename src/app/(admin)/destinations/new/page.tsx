@@ -120,7 +120,7 @@ export default function CreateDestinationPage() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6 transition-all duration-300">
         {/* Section 1: Informasi Dasar */}
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex flex-col gap-5">
           <h2 className="text-sm font-bold text-[#0F172A] pb-3 border-b border-gray-50 flex items-center gap-2">
