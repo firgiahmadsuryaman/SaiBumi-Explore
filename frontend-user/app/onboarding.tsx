@@ -59,3 +59,5 @@ export default function OnboardingScreen() {
     </SafeAreaView>
   );
 }
+
+// refined onboarding
