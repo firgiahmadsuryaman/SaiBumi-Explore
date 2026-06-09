@@ -121,7 +121,7 @@ export default function ProfilePage() {
         <div className="md:col-span-2 flex flex-col gap-6">
           {/* Section 1: Informasi Pribadi */}
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-5">
-            <div className="flex items-center justify-between pb-3 border-b border-gray-50">
+            <div className="flex items-center justify-between pb-4 border-b border-gray-100">
               <h3 className="text-sm font-bold text-[#0F172A] flex items-center gap-2">
                 <User size={16} className="text-gray-400" />
                 Informasi Pribadi
