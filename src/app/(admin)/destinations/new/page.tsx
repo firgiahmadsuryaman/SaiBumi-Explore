@@ -8,7 +8,7 @@ import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 import Select from "@/components/ui/Select";
 import Checkbox from "@/components/ui/Checkbox";
-import { ArrowLeft, Upload, Image as ImageIcon, Plus, Trash2 } from "lucide-react";
+import { ArrowLeft, Plus, Trash2 } from "lucide-react";
 import Link from "next/link";
 
 // Halaman pembuatan destinasi wisata baru
