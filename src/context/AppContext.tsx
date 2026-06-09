@@ -162,6 +162,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setDestinations(updated);
     localStorage.setItem("sb_destinations", JSON.stringify(updated));
   };
+    /**
+   * Menambahkan kategori baru ke dalam daftar.
+   */
   const addCategory = (name: string) => {
     const newCat: Category = {
       id: Math.random().toString(36).substr(2, 9),
