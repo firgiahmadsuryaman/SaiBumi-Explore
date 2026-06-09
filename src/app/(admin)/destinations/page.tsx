@@ -212,7 +212,7 @@ export default function DestinationsPage() {
                     <td className="py-3 px-3 font-semibold text-[#0F172A]">
                       {dest.name}
                     </td>
-                    <td className="py-3 px-3">
+                    <td className="py-3 px-3 text-center">
                       <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-gray-50 text-gray-600">
                         {dest.category}
                       </span>
