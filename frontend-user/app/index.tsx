@@ -56,3 +56,5 @@ export default function SplashScreen() {
 // refined splash
 
 // splash mod 1
+
+// splash mod 2
