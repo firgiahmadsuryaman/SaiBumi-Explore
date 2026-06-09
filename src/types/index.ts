@@ -29,6 +29,9 @@ export interface Category {
   totalDestinations: number;
 }
 
+/**
+ * Ulasan dan rating dari pengguna untuk destinasi wisata.
+ */
 export interface Review {
   id: string;
   user: {
