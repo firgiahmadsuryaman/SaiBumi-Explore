@@ -5,6 +5,9 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 
+/**
+ * Komponen Input Teks UI dengan penanganan label dan error.
+ */
 export default function Input({
   label,
   error,
