@@ -119,7 +119,7 @@ export default function DashboardPage() {
               </thead>
               <tbody className="divide-y divide-gray-50 text-sm">
                 {popularDestinations.map((dest) => (
-                  <tr key={dest.id} className="group hover:bg-gray-50/50 transition-colors">
+                  <tr key={dest.id} className="group hover:bg-gray-50/70 transition-colors duration-150">
                     <td className="py-4 pr-3 font-semibold text-[#0F172A]">
                       <div className="flex items-center gap-3">
                         <img
