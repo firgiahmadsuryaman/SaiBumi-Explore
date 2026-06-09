@@ -15,14 +15,17 @@ export default function AdminLayout({
   const { isLoggedIn } = useApp();
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("sb_isLoggedIn") !== "true";
+    }
+    return true;
+  });
 
   useEffect(() => {
     const storedAuth = localStorage.getItem("sb_isLoggedIn");
     if (storedAuth !== "true" && !isLoggedIn) {
       router.push("/login");
-    } else {
-      setLoading(false);
     }
   }, [isLoggedIn, router]);
 
