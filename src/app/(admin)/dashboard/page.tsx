@@ -6,6 +6,7 @@ import StatisticCard from "@/components/ui/StatisticCard";
 import { MapPin, FolderOpen, MessageSquare, Users, Star, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
+// Dashboard Utama: Ringkasan statistik, destinasi populer, ulasan terbaru
 export default function DashboardPage() {
   const { destinations, categories, reviews, users } = useApp();
 
