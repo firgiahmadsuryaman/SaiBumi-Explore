@@ -138,7 +138,13 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setCategories(updated);
     localStorage.setItem("sb_categories", JSON.stringify(updated));
   };
-  const updateCategory = (id: string, name: string) => {};
+  const updateCategory = (id: string, name: string) => {
+    const updated = categories.map((cat) =>
+      cat.id === id ? { ...cat, name } : cat
+    );
+    setCategories(updated);
+    localStorage.setItem("sb_categories", JSON.stringify(updated));
+  };
   const deleteCategory = (id: string) => {};
   const deleteReview = (id: string) => {};
   const updateProfile = (p: Partial<AdminProfile>) => {};
