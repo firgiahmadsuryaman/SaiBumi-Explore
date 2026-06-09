@@ -193,6 +193,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setCategories(updated);
     localStorage.setItem("sb_categories", JSON.stringify(updated));
   };
+    /**
+   * Menghapus ulasan pengguna berdasarkan ID.
+   */
   const deleteReview = (id: string) => {
     const updated = reviews.filter((rev) => rev.id !== id);
     setReviews(updated);
