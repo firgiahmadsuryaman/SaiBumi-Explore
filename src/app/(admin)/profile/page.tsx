@@ -208,7 +208,7 @@ export default function ProfilePage() {
           </div>
 
           {/* Section 2: Keamanan Akun */}
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-4">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-4 py-8">
             <h3 className="text-sm font-bold text-[#0F172A] pb-3 border-b border-gray-50 flex items-center gap-2">
               <Shield size={16} className="text-gray-400" />
               Keamanan Akun
