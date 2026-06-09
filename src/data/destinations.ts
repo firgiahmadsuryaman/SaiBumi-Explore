@@ -120,4 +120,22 @@ export const initialDestinations: Destination[] = [
     reviewsCount: 29,
     createdAt: "2023-07-18"
   }
+  {
+    id: "7",
+    name: "Teluk Kiluan",
+    category: "Pantai",
+    description: "Terkenal dengan atraksi lumba-lumba hidung botol di laut lepas dan pemandangan pulau kelapa kecil yang cantik.",
+    address: "Kecamatan Kelumbayan, Kabupaten Tanggamus, Lampung",
+    latitude: -5.7891,
+    longitude: 105.1234,
+    ticketPrice: 20000,
+    openTime: "06:00",
+    closeTime: "18:00",
+    facilities: ["Area Parkir", "Toilet", "Restoran", "Penginapan"],
+    thumbnail: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
+    images: [],
+    rating: 4.8,
+    reviewsCount: 167,
+    createdAt: "2023-06-25"
+  }
 ];
