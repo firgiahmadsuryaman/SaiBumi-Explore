@@ -150,7 +150,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setCategories(updated);
     localStorage.setItem("sb_categories", JSON.stringify(updated));
   };
-  const deleteReview = (id: string) => {};
+  const deleteReview = (id: string) => {
+    const updated = reviews.filter((rev) => rev.id !== id);
+    setReviews(updated);
+    localStorage.setItem("sb_reviews", JSON.stringify(updated));
+  };
   const updateProfile = (p: Partial<AdminProfile>) => {};
 
   return (
