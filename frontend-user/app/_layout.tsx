@@ -70,3 +70,5 @@ export default function RootLayout() {
   );
 }
 
+
+// dynamic status bar configured
