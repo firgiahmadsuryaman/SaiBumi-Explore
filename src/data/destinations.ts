@@ -102,4 +102,22 @@ export const initialDestinations: Destination[] = [
     reviewsCount: 38,
     createdAt: "2023-09-02"
   }
+  {
+    id: "6",
+    name: "Air Terjun Curup Tujuh",
+    category: "Air Terjun",
+    description: "Air terjun tujuh tingkat yang terletak di tengah hutan lindung, menawarkan suasana alami yang asri.",
+    address: "Kecamatan Sendang Agung, Kabupaten Lampung Tengah, Lampung",
+    latitude: -4.8912,
+    longitude: 104.9123,
+    ticketPrice: 15000,
+    openTime: "08:00",
+    closeTime: "17:00",
+    facilities: ["Area Parkir", "Toilet"],
+    thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    images: [],
+    rating: 4.4,
+    reviewsCount: 29,
+    createdAt: "2023-07-18"
+  }
 ];
