@@ -144,6 +144,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setDestinations(updated);
     localStorage.setItem("sb_destinations", JSON.stringify(updated));
   };
+    /**
+   * Memperbarui data destinasi wisata yang ada.
+   */
   const updateDestination = (id: string, d: Partial<Destination>) => {
     const updated = destinations.map((dest) =>
       dest.id === id ? { ...dest, ...d } : dest
