@@ -5,7 +5,7 @@ import { useApp } from "@/context/AppContext";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import Modal from "@/components/ui/Modal";
-import { FolderOpen, Plus, Edit, Trash2, Tag, Trophy, ArrowRight } from "lucide-react";
+import { FolderOpen, Plus, Edit, Trash2, Tag, Trophy } from "lucide-react";
 import { Category } from "@/types";
 
 // Halaman kelola kategori wisata: Statistik dan tabel CRUD
