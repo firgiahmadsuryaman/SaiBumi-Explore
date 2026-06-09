@@ -128,7 +128,16 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setDestinations(updated);
     localStorage.setItem("sb_destinations", JSON.stringify(updated));
   };
-  const addCategory = (name: string) => {};
+  const addCategory = (name: string) => {
+    const newCat: Category = {
+      id: Math.random().toString(36).substr(2, 9),
+      name,
+      totalDestinations: 0
+    };
+    const updated = [...categories, newCat];
+    setCategories(updated);
+    localStorage.setItem("sb_categories", JSON.stringify(updated));
+  };
   const updateCategory = (id: string, name: string) => {};
   const deleteCategory = (id: string) => {};
   const deleteReview = (id: string) => {};
