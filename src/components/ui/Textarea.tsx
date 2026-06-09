@@ -1,7 +1,12 @@
 import React, { useId } from "react";
 
+/**
+ * Properti untuk komponen Textarea.
+ */
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  /** Label teks di atas textarea */
   label?: string;
+  /** Pesan kesalahan/error yang akan ditampilkan di bawah textarea */
   error?: string;
 }
 
