@@ -1,7 +1,12 @@
 import React, { useId } from "react";
 
+/**
+ * Properti untuk komponen Input.
+ */
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  /** Label teks di atas field input */
   label?: string;
+  /** Pesan kesalahan/error yang akan ditampilkan di bawah field input */
   error?: string;
 }
 
