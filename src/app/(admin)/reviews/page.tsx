@@ -232,7 +232,7 @@ export default function ReviewsPage() {
                         {renderStars(rev.rating)}
                       </div>
                     </td>
-                    <td className="py-3 px-3 text-gray-500 font-medium leading-relaxed max-w-xs truncate md:max-w-md lg:whitespace-normal">
+                    <td className="py-3.5 px-4 text-gray-500 font-medium leading-relaxed max-w-xs truncate md:max-w-md lg:whitespace-normal">
                       {rev.comment}
                     </td>
                     <td className="py-3 px-3 font-semibold text-gray-400 flex items-center gap-1.5 mt-2.5">
