@@ -9,3 +9,5 @@
 // explore mod 4
 
 // explore mod 5
+
+// explore mod 6
