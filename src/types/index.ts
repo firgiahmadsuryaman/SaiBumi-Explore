@@ -1,3 +1,6 @@
+/**
+ * Representasi data destinasi wisata Lampung.
+ */
 export interface Destination {
   id: string;
   name: string;
