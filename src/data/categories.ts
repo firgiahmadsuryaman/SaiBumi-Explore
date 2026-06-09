@@ -8,4 +8,5 @@ export const initialCategories: Category[] = [
   { id: "5", name: "Budaya & Sejarah", totalDestinations: 12 },
   { id: "6", name: "Kuliner", totalDestinations: 30 },
   { id: "7", name: "Alam", totalDestinations: 18 }
+  { id: "8", name: "Wisata Sejarah", totalDestinations: 5 }
 ];
