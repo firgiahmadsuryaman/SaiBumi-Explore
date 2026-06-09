@@ -138,4 +138,22 @@ export const initialDestinations: Destination[] = [
     reviewsCount: 167,
     createdAt: "2023-06-25"
   }
+  {
+    id: "8",
+    name: "Danau Ranau",
+    category: "Danau",
+    description: "Danau terbesar kedua di Sumatera yang berbatasan dengan Sumatera Selatan, menawarkan latar belakang pemandangan Gunung Seminung yang anggun.",
+    address: "Kabupaten Lampung Barat, Lampung",
+    latitude: -4.8912,
+    longitude: 103.9123,
+    ticketPrice: 10000,
+    openTime: "00:00",
+    closeTime: "23:59",
+    facilities: ["Area Parkir", "Mushola", "Toilet", "Restoran", "Spot Foto", "Penginapan"],
+    thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    images: [],
+    rating: 4.7,
+    reviewsCount: 212,
+    createdAt: "2023-05-10"
+  }
 ];
