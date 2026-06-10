@@ -10,11 +10,11 @@ import Link from "next/link";
 export default function DashboardPage() {
   const { destinations, categories, reviews, users } = useApp();
 
-  // Dynamic statistics calculated with offsets to match the design mockup
-  const statDestinations = 244 + destinations.length;
-  const statCategories = 8 + categories.length;
-  const statReviews = 1488 + reviews.length;
-  const statUsers = 8335 + users.length;
+  // Dynamic statistics calculated with actual values
+  const statDestinations = destinations.length;
+  const statCategories = categories.length;
+  const statReviews = reviews.length;
+  const statUsers = users.length;
 
   // Popular Destinations (sorted by rating descending, top 4)
   const popularDestinations = [...destinations]

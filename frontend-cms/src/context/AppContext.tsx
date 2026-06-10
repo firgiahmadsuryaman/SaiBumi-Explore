@@ -27,8 +27,8 @@ interface AppContextType {
 }
 
 const defaultProfile: AdminProfile = {
-  name: "Budi Santoso",
-  email: "budi.santoso@saibumi.com",
+  name: "Admin SaiBumi",
+  email: "admin@saibumi.com",
   avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80"
 };
 

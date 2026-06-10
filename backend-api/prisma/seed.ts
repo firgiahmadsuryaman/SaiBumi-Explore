@@ -23,7 +23,7 @@ async function main() {
   const passwordHash = await bcrypt.hash('admin123', 10);
   const admin = await prisma.user.create({
     data: {
-      name: 'Budi Santoso',
+      name: 'Admin SaiBumi',
       email: 'admin@saibumi.com',
       password: passwordHash,
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
@@ -33,70 +33,7 @@ async function main() {
   });
   console.log(`Admin user berhasil dibuat: ${admin.email}`);
 
-  // Seed Registered Users
-  const dummyPasswordHash = await bcrypt.hash('user123', 10);
-  const registeredUsers = [
-    {
-      name: 'Budi Santoso',
-      email: 'budi.santoso@example.com',
-      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-01-15'),
-    },
-    {
-      name: 'Siti Rahma',
-      email: 'siti.rahma@example.com',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-02-20'),
-    },
-    {
-      name: 'Andi Wijaya',
-      email: 'andi.wijaya@example.com',
-      avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-03-05'),
-    },
-    {
-      name: 'Dewi Lestari',
-      email: 'dewi.lestari@example.com',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-04-10'),
-    },
-    {
-      name: 'Rian Hidayat',
-      email: 'rian.hidayat@example.com',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-05-12'),
-    },
-    {
-      name: 'Yoga Pratama',
-      email: 'yoga.pratama@example.com',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-06-18'),
-    },
-    {
-      name: 'Fitriani',
-      email: 'fitriani@example.com',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-07-22'),
-    },
-    {
-      name: 'Bambang Hermawan',
-      email: 'bambang.h@example.com',
-      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80',
-      joinDate: new Date('2023-08-15'),
-    },
-  ];
-
-  for (const u of registeredUsers) {
-    await prisma.user.create({
-      data: {
-        ...u,
-        password: dummyPasswordHash,
-        role: 'USER',
-        status: 'ACTIVE',
-      },
-    });
-  }
-  console.log(`Berhasil membuat ${registeredUsers.length} pengguna terdaftar.`);
+  // No registered users seeded (clean start)
 
   // 3. Seed Categories
   const categoriesData = [
@@ -137,8 +74,8 @@ async function main() {
         'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
         'https://images.unsplash.com/photo-1471922639839-be7462f54e5e?auto=format&fit=crop&w=600&q=80',
       ],
-      rating: 4.8,
-      reviewsCount: 142,
+      rating: 0.0,
+      reviewsCount: 0,
     },
     {
       name: 'Pulau Pahawang',
@@ -156,13 +93,13 @@ async function main() {
         'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80',
         'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80',
       ],
-      rating: 4.7,
-      reviewsCount: 289,
+      rating: 0.0,
+      reviewsCount: 0,
     },
     {
       name: 'Taman Nasional Way Kambas',
       categoryName: 'Alam',
-      description: 'Pusat konservasi dan penangkaran gajah sumatera yang terkenal secara nasional dan internasional. Pengunjung dapat melihat pelatihan gajah secara langsung.',
+      description: 'Pusat konservasi dan penangkaran gajah sumatera yang terkenal secara nasional and internasional. Pengunjung dapat melihat pelatihan gajah secara langsung.',
       address: 'Kecamatan Labuhan Ratu, Kabupaten Lampung Timur, Lampung',
       latitude: -5.0123,
       longitude: 105.7891,
@@ -175,8 +112,8 @@ async function main() {
         'https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=600&q=80',
         'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=600&q=80',
       ],
-      rating: 4.6,
-      reviewsCount: 421,
+      rating: 0.0,
+      reviewsCount: 0,
     },
     {
       name: 'Gunung Anak Krakatau',
@@ -193,8 +130,8 @@ async function main() {
       images: [
         'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=600&q=80',
       ],
-      rating: 4.9,
-      reviewsCount: 95,
+      rating: 0.0,
+      reviewsCount: 0,
     },
     {
       name: 'Kawah Keramikan Suoh',
@@ -209,8 +146,8 @@ async function main() {
       facilities: ['Area Parkir', 'Toilet', 'Spot Foto'],
       thumbnail: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80',
       images: [],
-      rating: 4.5,
-      reviewsCount: 38,
+      rating: 0.0,
+      reviewsCount: 0,
     },
     {
       name: 'Air Terjun Curup Tujuh',
@@ -225,8 +162,8 @@ async function main() {
       facilities: ['Area Parkir', 'Toilet'],
       thumbnail: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
       images: [],
-      rating: 4.4,
-      reviewsCount: 29,
+      rating: 0.0,
+      reviewsCount: 0,
     },
     {
       name: 'Teluk Kiluan',
@@ -241,8 +178,8 @@ async function main() {
       facilities: ['Area Parkir', 'Toilet', 'Restoran', 'Penginapan'],
       thumbnail: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80',
       images: [],
-      rating: 4.8,
-      reviewsCount: 167,
+      rating: 0.0,
+      reviewsCount: 0,
     },
     {
       name: 'Danau Ranau',
@@ -257,8 +194,8 @@ async function main() {
       facilities: ['Area Parkir', 'Mushola', 'Toilet', 'Restoran', 'Spot Foto', 'Penginapan'],
       thumbnail: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
       images: [],
-      rating: 4.7,
-      reviewsCount: 212,
+      rating: 0.0,
+      reviewsCount: 0,
     },
   ];
 
@@ -278,73 +215,7 @@ async function main() {
   }
   console.log(`Berhasil membuat ${Object.keys(destinationsMap).length} destinasi wisata.`);
 
-  // 5. Seed Reviews
-  const reviewsData = [
-    {
-      userName: 'Budi Santoso',
-      userEmail: 'budi.santoso@example.com',
-      destinationName: 'Pantai Gigi Hiu',
-      rating: 5,
-      comment: 'Pemandangan batu karangnya luar biasa indah dan sangat estetik untuk foto! Jalur akses ke lokasi cukup menantang namun sangat sepadan.',
-    },
-    {
-      userName: 'Siti Rahma',
-      userEmail: 'siti.rahma@example.com',
-      destinationName: 'Pulau Pahawang',
-      rating: 4,
-      comment: 'Sangat menyenangkan melakukan snorkeling di Pahawang. Airnya jernih sekali dan terumbu karangnya masih terawat dengan sangat baik.',
-    },
-    {
-      userName: 'Andi Wijaya',
-      userEmail: 'andi.wijaya@example.com',
-      destinationName: 'Taman Nasional Way Kambas',
-      rating: 5,
-      comment: 'Pengalaman luar biasa melihat penangkaran gajah sumatera secara dekat. Pemandu wisatanya sangat ramah dan edukatif dalam menyampaikan informasi.',
-    },
-    {
-      userName: 'Dewi Lestari',
-      userEmail: 'dewi.lestari@example.com',
-      destinationName: 'Pantai Gigi Hiu',
-      rating: 4,
-      comment: 'Tempat yang sangat dramatis dan memukau. Sangat disarankan datang saat sore hari untuk menikmati sunset di balik batu karang raksasa.',
-    },
-    {
-      userName: 'Rian Hidayat',
-      userEmail: 'rian.hidayat@example.com',
-      destinationName: 'Pulau Pahawang',
-      rating: 5,
-      comment: 'Tempat terbaik untuk refreshing akhir pekan bersama keluarga. Homestay di sana sangat nyaman dan bersih.',
-    },
-    {
-      userName: 'Siti Rahma',
-      userEmail: 'siti.rahma@example.com',
-      destinationName: 'Taman Nasional Way Kambas',
-      rating: 4,
-      comment: 'Sangat edukatif terutama bagi anak-anak untuk belajar mencintai satwa dan alam.',
-    },
-    {
-      userName: 'Dewi Lestari',
-      userEmail: 'dewi.lestari@example.com',
-      destinationName: 'Pantai Gigi Hiu',
-      rating: 5,
-      comment: 'Keindahan karang yang tiada duanya! Sangat magis ketika diterpa ombak besar.',
-    },
-  ];
-
-  for (const rev of reviewsData) {
-    const { destinationName, ...rest } = rev;
-    const destinationId = destinationsMap[destinationName];
-    if (!destinationId) continue;
-
-    await prisma.review.create({
-      data: {
-        ...rest,
-        destinationId,
-      },
-    });
-  }
-  console.log(`Berhasil membuat ${reviewsData.length} ulasan wisata.`);
-
+  // No reviews seeded (clean start)
   console.log('Seeding database selesai dengan sukses! 🎉');
 }
 

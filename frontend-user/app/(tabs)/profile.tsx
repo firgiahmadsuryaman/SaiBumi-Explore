@@ -76,7 +76,7 @@ export default function ProfileScreen() {
             {user?.name || 'Nama Pengguna'}
           </Text>
           <Text className="font-poppins text-textSecondary text-xs">
-            {user?.email || 'user@example.com'}
+            {user?.email || 'tamu@saibumi.com'}
           </Text>
         </View>
 

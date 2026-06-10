@@ -23,13 +23,13 @@ export default function ReviewsPage() {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const [reviewToDelete, setReviewToDelete] = useState<string | null>(null);
 
-  // Statistics calculation with offsets matching the mockup
-  const totalReviewsCount = 1244 + reviews.length; // 1,248
+  // Statistics calculation based on real reviews data
+  const totalReviewsCount = reviews.length;
   const averageRating = reviews.length > 0 
     ? (reviews.reduce((acc, curr) => acc + curr.rating, 0) / reviews.length).toFixed(1)
-    : "4.6";
-  const positiveReviews = 1198 + reviews.filter((r) => r.rating >= 4).length; // 1200+
-  const negativeReviews = 41 + reviews.filter((r) => r.rating <= 2).length; // 45+
+    : "0.0";
+  const positiveReviews = reviews.filter((r) => r.rating >= 4).length;
+  const negativeReviews = reviews.filter((r) => r.rating <= 2).length;
 
   const handleConfirmDelete = () => {
     if (reviewToDelete) {

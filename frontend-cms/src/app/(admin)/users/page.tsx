@@ -22,10 +22,10 @@ export default function UsersPage() {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
 
-  // Statistics calculation with offsets matching the mockup
-  const totalUsersCount = 1243 + users.length; // 1,248
-  const activeUsersCount = 887 + users.length; // 892
-  const newUsersCount = 40 + users.length; // 45
+  // Statistics calculation based on real users data
+  const totalUsersCount = users.length;
+  const activeUsersCount = users.filter((u) => u.status === "ACTIVE").length;
+  const newUsersCount = users.length;
 
   // Filter Logic
   const filteredUsers = users.filter((u) => {
@@ -155,11 +155,11 @@ export default function UsersPage() {
                     </td>
                     <td className="py-3 px-3 text-center">
                       <span className={`px-2.5 py-1 text-xs font-semibold rounded-md ${
-                        i % 4 === 0 
-                          ? "bg-rose-50 text-rose-600" 
-                          : "bg-emerald-50 text-emerald-600"
+                        user.status === "ACTIVE" 
+                          ? "bg-emerald-50 text-emerald-600"
+                          : "bg-rose-50 text-rose-600"
                       }`}>
-                        {i % 4 === 0 ? "Tidak Aktif" : "Aktif"}
+                        {user.status === "ACTIVE" ? "Aktif" : "Tidak Aktif"}
                       </span>
                     </td>
                     <td className="py-3 px-3 font-semibold text-gray-400 flex items-center gap-1.5 mt-2.5">
@@ -238,7 +238,9 @@ export default function UsersPage() {
             <div className="w-full grid grid-cols-2 gap-4 text-left">
               <div className="flex flex-col gap-0.5">
                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Status Akun</span>
-                <span className="text-xs font-bold text-emerald-600">Aktif</span>
+                <span className={`text-xs font-bold ${selectedUser.status === "ACTIVE" ? "text-emerald-600" : "text-rose-600"}`}>
+                  {selectedUser.status === "ACTIVE" ? "Aktif" : "Tidak Aktif"}
+                </span>
               </div>
               <div className="flex flex-col gap-0.5">
                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Bergabung Sejak</span>

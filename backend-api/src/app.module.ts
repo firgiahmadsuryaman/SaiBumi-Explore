@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+// reload trigger comment
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { CategoryModule } from './category/category.module';

@@ -18,8 +18,8 @@ export const initialDestinations: Destination[] = [
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1471922639839-be7462f54e5e?auto=format&fit=crop&w=600&q=80"
     ],
-    rating: 4.8,
-    reviewsCount: 142,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-10-12"
   },
   {
@@ -39,8 +39,8 @@ export const initialDestinations: Destination[] = [
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80"
     ],
-    rating: 4.7,
-    reviewsCount: 289,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-08-24"
   },
   {
@@ -60,8 +60,8 @@ export const initialDestinations: Destination[] = [
       "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=600&q=80"
     ],
-    rating: 4.6,
-    reviewsCount: 421,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-05-15"
   },
   {
@@ -80,8 +80,8 @@ export const initialDestinations: Destination[] = [
     images: [
       "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=600&q=80"
     ],
-    rating: 4.9,
-    reviewsCount: 95,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-11-02"
   },
   {
@@ -98,8 +98,8 @@ export const initialDestinations: Destination[] = [
     facilities: ["Area Parkir", "Toilet", "Spot Foto"],
     thumbnail: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
     images: [],
-    rating: 4.5,
-    reviewsCount: 38,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-09-02"
   },
   {
@@ -116,8 +116,8 @@ export const initialDestinations: Destination[] = [
     facilities: ["Area Parkir", "Toilet"],
     thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
     images: [],
-    rating: 4.4,
-    reviewsCount: 29,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-07-18"
   },
   {
@@ -134,8 +134,8 @@ export const initialDestinations: Destination[] = [
     facilities: ["Area Parkir", "Toilet", "Restoran", "Penginapan"],
     thumbnail: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
     images: [],
-    rating: 4.8,
-    reviewsCount: 167,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-06-25"
   },
   {
@@ -152,8 +152,8 @@ export const initialDestinations: Destination[] = [
     facilities: ["Area Parkir", "Mushola", "Toilet", "Restoran", "Spot Foto", "Penginapan"],
     thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
     images: [],
-    rating: 4.7,
-    reviewsCount: 212,
+    rating: 0.0,
+    reviewsCount: 0,
     createdAt: "2023-05-10"
   }
 ];
