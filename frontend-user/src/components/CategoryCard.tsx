@@ -46,10 +46,23 @@ export default function CategoryCard({
       <TouchableOpacity
         onPress={onPress}
         activeOpacity={0.7}
-        className={`items-center justify-center p-3 rounded-2xl ${
-          isActive ? 'bg-sky-500' : 'bg-white border border-gray-100 shadow-sm'
-        } ${className}`}
-        style={{ minWidth: 64, minHeight: 64 }}
+        className={`items-center justify-center p-3 rounded-2xl ${className}`}
+        style={{
+          minWidth: 64,
+          minHeight: 64,
+          backgroundColor: isActive ? '#0EA5E9' : '#FFFFFF',
+          borderWidth: isActive ? 0 : 1,
+          borderColor: '#F3F4F6',
+          ...(!isActive
+            ? {
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 1 },
+                shadowOpacity: 0.15,
+                shadowRadius: 1.5,
+                elevation: 2,
+              }
+            : {}),
+        }}
       >
         <View className="mb-1.5">{getIcon()}</View>
         <Text
@@ -68,9 +81,10 @@ export default function CategoryCard({
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
-      className={`px-4 py-2.5 rounded-full mr-2.5 flex-row items-center ${
-        isActive ? 'bg-sky-500' : 'bg-gray-100'
-      } ${className}`}
+      className={`px-4 py-2.5 rounded-full mr-2.5 flex-row items-center ${className}`}
+      style={{
+        backgroundColor: isActive ? '#0EA5E9' : '#F3F4F6',
+      }}
     >
       <Text
         className={`font-poppins text-xs font-semibold ${

@@ -47,8 +47,15 @@ export default function OnboardingScreen() {
           <TouchableOpacity
             onPress={handleNext}
             activeOpacity={0.8}
-            className="w-full bg-sky-500 h-12 rounded-xl flex-row items-center justify-center shadow-md"
-            style={{ minHeight: 48 }}
+            className="w-full bg-sky-500 h-12 rounded-xl flex-row items-center justify-center"
+            style={{
+              minHeight: 48,
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.25,
+              shadowRadius: 3.84,
+              elevation: 5,
+            }}
           >
             <Text className="font-poppins font-bold text-white text-sm mr-2">
               Lanjut

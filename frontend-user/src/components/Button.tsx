@@ -20,7 +20,7 @@ export default function Button({
   icon,
   className = '',
 }: ButtonProps) {
-  let btnStyle = 'h-12 rounded-xl flex-row items-center justify-center px-4 shadow-sm';
+  let btnStyle = 'h-12 rounded-xl flex-row items-center justify-center px-4';
   let textStyle = 'font-poppins font-semibold text-sm';
 
   if (variant === 'primary') {
@@ -36,12 +36,8 @@ export default function Button({
     btnStyle += ' bg-transparent border border-sky-500';
     textStyle += ' text-sky-500';
   } else if (variant === 'google') {
-    btnStyle += ' bg-white border border-gray-200 shadow-sm';
+    btnStyle += ' bg-white border border-gray-200';
     textStyle += ' text-gray-700';
-  }
-
-  if (disabled || isLoading) {
-    btnStyle += ' opacity-50';
   }
 
   return (
@@ -50,7 +46,19 @@ export default function Button({
       onPress={onPress}
       disabled={disabled || isLoading}
       className={`${btnStyle} ${className}`}
-      style={{ minHeight: 48 }}
+      style={{
+        minHeight: 48,
+        ...((variant === 'primary' || variant === 'secondary' || variant === 'danger' || variant === 'google')
+          ? {
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 1 },
+              shadowOpacity: 0.15,
+              shadowRadius: 1.5,
+              elevation: 2,
+            }
+          : {}),
+        ...(disabled || isLoading ? { opacity: 0.5 } : {}),
+      }}
     >
       {isLoading ? (
         <ActivityIndicator color={variant === 'outline' || variant === 'google' ? '#0EA5E9' : '#FFFFFF'} />

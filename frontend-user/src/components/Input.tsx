@@ -29,21 +29,28 @@ export default function Input({
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <View className={`mb-4 ${className}`}>
+    <View className={`mb-4 ${className}`} collapsable={false}>
       {label && (
         <Text className="font-poppins font-medium text-xs text-textSecondary mb-1.5 ml-1">
           {label}
         </Text>
       )}
       <View
-        className={`flex-row items-center border rounded-xl bg-white px-3 h-12 ${
-          error
-            ? 'border-danger'
-            : isFocused
-            ? 'border-sky-500 shadow-sm'
-            : 'border-border'
-        }`}
-        style={{ minHeight: 48 }}
+        className="flex-row items-center border rounded-xl bg-white px-3 h-12"
+        collapsable={false}
+        style={{
+          minHeight: 48,
+          borderColor: error ? '#EF4444' : isFocused ? '#0EA5E9' : '#E2E8F0',
+          ...(isFocused
+            ? {
+                shadowColor: '#0EA5E9',
+                shadowOffset: { width: 0, height: 1 },
+                shadowOpacity: 0.2,
+                shadowRadius: 1.41,
+                elevation: 2,
+              }
+            : {}),
+        }}
       >
         {leftIcon && <View className="mr-2 text-gray-400">{leftIcon}</View>}
         <TextInput

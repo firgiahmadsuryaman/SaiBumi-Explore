@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Mail, Lock, Compass } from 'lucide-react-native';
 import { useAuth } from '../../src/context/AuthContext';
@@ -45,7 +45,12 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView className="flex-1 bg-white">
-      <View className="flex-1 justify-center px-8">
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
+        className="px-8 py-6"
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
         <View className="items-center mb-6">
           <View className="w-16 h-16 bg-sky-50 rounded-2xl items-center justify-center mb-3">
             <Compass size={32} color="#0EA5E9" fill="#E0F2FE" />
@@ -111,7 +116,7 @@ export default function LoginScreen() {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

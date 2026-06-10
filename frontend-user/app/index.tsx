@@ -32,20 +32,35 @@ export default function SplashScreen() {
 
       <View className="items-center">
         {/* Logo Container */}
-        <View className="w-24 h-24 bg-white rounded-3xl items-center justify-center shadow-md mb-6">
+        <View
+          className="w-24 h-24 bg-white rounded-3xl items-center justify-center mb-6"
+          style={{
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+          }}
+        >
           <Compass size={48} color="#0EA5E9" fill="#E0F2FE" />
         </View>
         <Text className="font-poppins font-bold text-white text-3xl tracking-wide">
           SaiBumi Explore
         </Text>
-        <Text className="font-poppins text-white/90 text-sm mt-2 tracking-widest uppercase">
+        <Text
+          className="font-poppins text-white text-sm mt-2 tracking-widest uppercase"
+          style={{ opacity: 0.9 }}
+        >
           Jelajahi Keindahan Lampung
         </Text>
       </View>
 
       <View className="items-center">
         <ActivityIndicator size="small" color="#FFFFFF" className="mb-2" />
-        <Text className="font-poppins font-bold text-white/80 text-[10px] tracking-widest uppercase">
+        <Text
+          className="font-poppins font-bold text-white text-[10px] tracking-widest uppercase"
+          style={{ opacity: 0.8 }}
+        >
           Memuat
         </Text>
       </View>
