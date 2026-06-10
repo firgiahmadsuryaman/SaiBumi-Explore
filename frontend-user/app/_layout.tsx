@@ -53,7 +53,7 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <AuthProvider>
         <FavoriteProvider>
-          <StatusBar style="dark" />
+          <StatusBar style="dark" translucent={true} backgroundColor="transparent" />
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="index" />
             <Stack.Screen name="onboarding" />

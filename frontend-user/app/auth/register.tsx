@@ -52,104 +52,102 @@ export default function RegisterScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-slate-50">
-      <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }} className="px-6 py-8">
-        <View className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <View className="items-center mb-6">
-            <Text className="font-poppins font-bold text-textPrimary text-xl text-center">
-              Mulai Petualanganmu
+    <SafeAreaView className="flex-1 bg-white">
+      <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }} className="px-8 py-8" showsVerticalScrollIndicator={false}>
+        <View className="items-center mb-6">
+          <Text className="font-poppins font-bold text-textPrimary text-2xl text-center">
+            Mulai Petualanganmu
+          </Text>
+          <Text className="font-poppins text-textSecondary text-xs text-center mt-1">
+            Buat akun untuk menjelajahi keindahan Lampung
+          </Text>
+        </View>
+
+        <View className="items-center mb-6">
+          <TouchableOpacity
+            activeOpacity={0.7}
+            className="w-20 h-20 bg-slate-100 rounded-full items-center justify-center border border-gray-200"
+            onPress={() => Alert.alert('Pilih Foto', 'Fitur unggah foto belum tersedia')}
+          >
+            <Camera size={24} color="#64748B" />
+          </TouchableOpacity>
+        </View>
+
+        <Input
+          label="Nama Lengkap"
+          placeholder="Masukkan nama lengkap Anda"
+          value={name}
+          onChangeText={(txt) => {
+            setName(txt);
+            if (errors.name) setErrors({ ...errors, name: undefined });
+          }}
+          leftIcon={<User size={16} color="#64748B" />}
+          error={errors.name}
+        />
+
+        <Input
+          label="Email"
+          placeholder="Masukkan email Anda"
+          value={email}
+          onChangeText={(txt) => {
+            setEmail(txt);
+            if (errors.email) setErrors({ ...errors, email: undefined });
+          }}
+          keyboardType="email-address"
+          leftIcon={<Mail size={16} color="#64748B" />}
+          error={errors.email}
+        />
+
+        <Input
+          label="Nomor Telepon"
+          placeholder="Contoh: +62 812 3456 7890"
+          value={phone}
+          onChangeText={(txt) => {
+            setPhone(txt);
+            if (errors.phone) setErrors({ ...errors, phone: undefined });
+          }}
+          keyboardType="phone-pad"
+          leftIcon={<Phone size={16} color="#64748B" />}
+          error={errors.phone}
+        />
+
+        <Input
+          label="Kata Sandi"
+          placeholder="Minimal 6 karakter"
+          value={password}
+          onChangeText={(txt) => {
+            setPassword(txt);
+            if (errors.password) setErrors({ ...errors, password: undefined });
+          }}
+          secureTextEntry
+          leftIcon={<Lock size={16} color="#64748B" />}
+          error={errors.password}
+        />
+
+        <Input
+          label="Konfirmasi Kata Sandi"
+          placeholder="Ulangi kata sandi"
+          value={confirmPassword}
+          onChangeText={(txt) => {
+            setConfirmPassword(txt);
+            if (errors.confirmPassword) setErrors({ ...errors, confirmPassword: undefined });
+          }}
+          secureTextEntry
+          leftIcon={<Lock size={16} color="#64748B" />}
+          error={errors.confirmPassword}
+        />
+
+        <Button title="Daftar" onPress={handleRegister} isLoading={isLoading} className="mt-4 mb-6" />
+
+        <View className="flex-row justify-center">
+          <Text className="font-poppins text-textSecondary text-xs">
+            Sudah punya akun?{' '}
+          </Text>
+          <TouchableOpacity onPress={() => router.replace('/auth/login')} activeOpacity={0.7}>
+            <Text className="font-poppins font-bold text-sky-500 text-xs">
+              Masuk
             </Text>
-            <Text className="font-poppins text-textSecondary text-xs text-center mt-1">
-              Buat akun untuk menjelajahi keindahan Lampung
-            </Text>
-          </View>
-
-          <View className="items-center mb-6">
-            <TouchableOpacity
-              activeOpacity={0.7}
-              className="w-20 h-20 bg-slate-100 rounded-full items-center justify-center border border-gray-200"
-              onPress={() => Alert.alert('Pilih Foto', 'Fitur unggah foto belum tersedia')}
-            >
-              <Camera size={24} color="#64748B" />
-            </TouchableOpacity>
-          </View>
-
-          <Input
-            label="Nama Lengkap"
-            placeholder="Masukkan nama lengkap Anda"
-            value={name}
-            onChangeText={(txt) => {
-              setName(txt);
-              if (errors.name) setErrors({ ...errors, name: undefined });
-            }}
-            leftIcon={<User size={16} color="#64748B" />}
-            error={errors.name}
-          />
-
-          <Input
-            label="Email"
-            placeholder="Masukkan email Anda"
-            value={email}
-            onChangeText={(txt) => {
-              setEmail(txt);
-              if (errors.email) setErrors({ ...errors, email: undefined });
-            }}
-            keyboardType="email-address"
-            leftIcon={<Mail size={16} color="#64748B" />}
-            error={errors.email}
-          />
-
-          <Input
-            label="Nomor Telepon"
-            placeholder="Contoh: +62 812 3456 7890"
-            value={phone}
-            onChangeText={(txt) => {
-              setPhone(txt);
-              if (errors.phone) setErrors({ ...errors, phone: undefined });
-            }}
-            keyboardType="phone-pad"
-            leftIcon={<Phone size={16} color="#64748B" />}
-            error={errors.phone}
-          />
-
-          <Input
-            label="Kata Sandi"
-            placeholder="Minimal 6 karakter"
-            value={password}
-            onChangeText={(txt) => {
-              setPassword(txt);
-              if (errors.password) setErrors({ ...errors, password: undefined });
-            }}
-            secureTextEntry
-            leftIcon={<Lock size={16} color="#64748B" />}
-            error={errors.password}
-          />
-
-          <Input
-            label="Konfirmasi Kata Sandi"
-            placeholder="Ulangi kata sandi"
-            value={confirmPassword}
-            onChangeText={(txt) => {
-              setConfirmPassword(txt);
-              if (errors.confirmPassword) setErrors({ ...errors, confirmPassword: undefined });
-            }}
-            secureTextEntry
-            leftIcon={<Lock size={16} color="#64748B" />}
-            error={errors.confirmPassword}
-          />
-
-          <Button title="Daftar" onPress={handleRegister} isLoading={isLoading} className="mt-4 mb-6" />
-
-          <View className="flex-row justify-center">
-            <Text className="font-poppins text-textSecondary text-xs">
-              Sudah punya akun?{' '}
-            </Text>
-            <TouchableOpacity onPress={() => router.replace('/auth/login')} activeOpacity={0.7}>
-              <Text className="font-poppins font-bold text-sky-500 text-xs">
-                Masuk
-              </Text>
-            </TouchableOpacity>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

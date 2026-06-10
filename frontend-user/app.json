@@ -7,6 +7,11 @@
     "icon": "./assets/images/icon.png",
     "scheme": "frontenduser",
     "userInterfaceStyle": "automatic",
+    "statusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#00000000",
+      "translucent": true
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -40,5 +45,3 @@
     }
   }
 }
-
-// build tests passed
