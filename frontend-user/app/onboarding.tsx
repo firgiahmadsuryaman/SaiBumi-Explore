@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { ArrowRight } from 'lucide-react-native';
 
@@ -59,13 +60,3 @@ export default function OnboardingScreen() {
     </SafeAreaView>
   );
 }
-
-// refined onboarding
-
-// onboarding mod 1
-
-// onboarding mod 2
-
-// onboarding mod 3
-
-// onboarding mod 4
