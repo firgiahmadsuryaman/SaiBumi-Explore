@@ -1,6 +1,6 @@
 # SaiBumi Explore - Lampung Tourism Platform
 
-SaiBumi Explore adalah platform pariwisata terintegrasi untuk Provinsi Lampung. Platform ini terdiri dari tiga komponen utama:
+SaiBumi Explore adalah platform pariwisata terintegrasi untuk wisata di Provinsi Lampung. Platform ini terdiri dari tiga komponen utama:
 1. **backend-api**: Layanan RESTful API berkinerja tinggi.
 2. **frontend-cms**: Website Dashboard CMS untuk Admin mengelola konten pariwisata.
 3. **frontend-user**: Aplikasi Android Mobile bagi wisatawan untuk menjelajahi destinasi wisata Lampung.
