@@ -7,7 +7,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#0EA5E9',
+        tabBarActiveTintColor: '#00678F',
         tabBarInactiveTintColor: '#64748B',
         tabBarStyle: {
           height: 60,
@@ -34,7 +34,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Jelajah',
+          title: 'Jelajahi',
           tabBarIcon: ({ color }) => <Compass size={20} color={color} />,
         }}
       />

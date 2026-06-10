@@ -61,7 +61,7 @@ export default function ReviewsScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <View className="flex-1 bg-white">
       <Header title="Ulasan" showBackButton />
 
       <FlatList
@@ -107,9 +107,9 @@ export default function ReviewsScreen() {
           ) : null
         }
         ListFooterComponent={
-          isLoading ? <ActivityIndicator size="small" color="#0EA5E9" className="my-4" /> : null
+          isLoading ? <ActivityIndicator size="small" color="#00678F" className="my-4" /> : null
         }
       />
-    </SafeAreaView>
+    </View>
   );
 }

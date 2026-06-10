@@ -6,19 +6,19 @@ import Header from '../src/components/Header';
 
 export default function AboutScreen() {
   const menus = [
-    { title: 'Kebijakan Privasi', icon: <ShieldCheck size={18} color="#0EA5E9" /> },
+    { title: 'Kebijakan Privasi', icon: <ShieldCheck size={18} color="#00678F" /> },
     { title: 'Syarat & Ketentuan', icon: <FileText size={18} color="#14B8A6" /> },
     { title: 'Beri Nilai Aplikasi', icon: <Star size={18} color="#F59E0B" /> }
   ];
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <View className="flex-1 bg-white">
       <Header title="Tentang Aplikasi" showBackButton />
 
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="px-6 py-8">
         <View className="items-center mb-8 mt-4">
-          <View className="w-20 h-20 bg-sky-50 rounded-3xl items-center justify-center shadow-md mb-4 border border-sky-100">
-            <Compass size={40} color="#0EA5E9" fill="#E0F2FE" />
+          <View className="w-20 h-20 bg-[#00678F] rounded-3xl items-center justify-center shadow-md mb-4">
+            <Compass size={40} color="#FFFFFF" />
           </View>
           <Text className="font-poppins font-bold text-textPrimary text-lg">SaiBumi Explore</Text>
           <Text className="font-poppins text-textSecondary text-[10px] mt-0.5">Versi 1.0.0</Text>
@@ -55,6 +55,6 @@ export default function AboutScreen() {
           </Text>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

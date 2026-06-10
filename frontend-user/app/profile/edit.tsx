@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, Alert, ScrollView } from 'react-native';
+import { View, Text, Alert, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { User, Phone, Mail, Camera } from 'lucide-react-native';
 import { useAuth } from '../../src/context/AuthContext';
 import Input from '../../src/components/Input';
 import Button from '../../src/components/Button';
 import Header from '../../src/components/Header';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function EditProfileScreen() {
   const router = useRouter();
@@ -46,15 +45,23 @@ export default function EditProfileScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <View className="flex-1 bg-white">
       <Header title="Edit Profil" showBackButton />
       
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="px-6 py-6">
         <View className="items-center mb-8">
           <View className="relative">
-            <View className="w-24 h-24 rounded-full bg-slate-100 items-center justify-center border border-gray-200 overflow-hidden">
-              <Camera size={32} color="#64748B" />
-            </View>
+            <Image
+              source={{ uri: user?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80' }}
+              className="w-24 h-24 rounded-full border-2 border-slate-100 shadow-sm"
+            />
+            <TouchableOpacity
+              activeOpacity={0.8}
+              className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-[#00678F] items-center justify-center border-2 border-white shadow-md"
+              onPress={() => Alert.alert('Informasi', 'Unggah foto profil baru belum tersedia.')}
+            >
+              <Camera size={14} color="#FFFFFF" />
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -98,6 +105,6 @@ export default function EditProfileScreen() {
 
         <Button title="Simpan Perubahan" onPress={handleSave} isLoading={isLoading} className="mt-6" />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

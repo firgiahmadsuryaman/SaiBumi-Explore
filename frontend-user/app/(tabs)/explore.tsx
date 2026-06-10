@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, ActivityIndicator } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Search } from 'lucide-react-native';
+import { View, Text, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { Search, SlidersHorizontal } from 'lucide-react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useAuth } from '../../src/context/AuthContext';
 import { useFavorites } from '../../src/context/FavoriteContext';
@@ -9,6 +8,7 @@ import Input from '../../src/components/Input';
 import CategoryCard from '../../src/components/CategoryCard';
 import DestinationCard from '../../src/components/DestinationCard';
 import EmptyState from '../../src/components/EmptyState';
+import Header from '../../src/components/Header';
 
 export default function ExploreScreen() {
   const router = useRouter();
@@ -63,8 +63,18 @@ export default function ExploreScreen() {
   });
 
   return (
-    <SafeAreaView className="flex-1 bg-slate-50 px-4 pt-4">
-      <View className="mb-4">
+    <View className="flex-1 bg-white">
+      <Header
+        title="SaiBumi Explore"
+        showBackButton={true}
+        rightComponent={
+          <TouchableOpacity activeOpacity={0.7} className="p-1">
+            <SlidersHorizontal size={18} color="#00678F" />
+          </TouchableOpacity>
+        }
+      />
+      <View className="flex-1 bg-slate-50 px-4 pt-4">
+        <View className="mb-4">
         <Input
           placeholder="Cari destinasi atau lokasi..."
           value={searchQuery}
@@ -92,7 +102,7 @@ export default function ExploreScreen() {
 
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="#0EA5E9" />
+          <ActivityIndicator size="large" color="#00678F" />
         </View>
       ) : (
         <FlatList
@@ -115,7 +125,8 @@ export default function ExploreScreen() {
           }
         />
       )}
-    </SafeAreaView>
+      </View>
+    </View>
   );
 }
 

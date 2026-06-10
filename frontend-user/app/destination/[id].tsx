@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity, ActivityIndicator, Alert, Linking } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ArrowLeft, Heart, Share2, MapPin, Star, Ticket, Clock } from 'lucide-react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuth } from '../../src/context/AuthContext';
 import { useFavorites } from '../../src/context/FavoriteContext';
 import Button from '../../src/components/Button';
@@ -15,6 +15,7 @@ export default function DestinationDetailScreen() {
   const [destination, setDestination] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showFullDesc, setShowFullDesc] = useState(false);
+  const insets = useSafeAreaInsets();
 
   const loadDetail = async () => {
     setIsLoading(true);
@@ -46,7 +47,7 @@ export default function DestinationDetailScreen() {
   if (isLoading) {
     return (
       <SafeAreaView className="flex-1 bg-slate-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#0EA5E9" />
+        <ActivityIndicator size="large" color="#00678F" />
       </SafeAreaView>
     );
   }
@@ -68,7 +69,10 @@ export default function DestinationDetailScreen() {
         <View className="relative h-72">
           <Image source={{ uri: destination.thumbnail }} className="w-full h-full" resizeMode="cover" />
           
-          <SafeAreaView className="absolute inset-x-0 top-0 flex-row justify-between px-4 pt-2">
+          <View
+            className="absolute inset-x-0 top-0 flex-row justify-between px-4"
+            style={{ paddingTop: insets.top > 0 ? insets.top + 8 : 16 }}
+          >
             <TouchableOpacity
               onPress={() => router.back()}
               className="w-9 h-9 rounded-full bg-black/40 items-center justify-center"
@@ -89,7 +93,7 @@ export default function DestinationDetailScreen() {
                 <Heart size={16} color={isFavorite(destination.id) ? '#EF4444' : '#FFFFFF'} fill={isFavorite(destination.id) ? '#EF4444' : 'transparent'} />
               </TouchableOpacity>
             </View>
-          </SafeAreaView>
+          </View>
 
           <View className="absolute bottom-4 right-4 bg-white/95 px-3 py-1.5 rounded-xl flex-row items-center shadow-md">
             <Star size={12} color="#F59E0B" fill="#F59E0B" />
@@ -103,8 +107,8 @@ export default function DestinationDetailScreen() {
         </View>
 
         <View className="p-5">
-          <View className="bg-sky-50 px-3 py-1.5 rounded-full self-start mb-2">
-            <Text className="font-poppins text-sky-600 text-[10px] font-semibold">
+          <View className="bg-[#00678F]/10 px-3 py-1.5 rounded-full self-start mb-2">
+            <Text className="font-poppins text-[#00678F] text-[10px] font-semibold">
               {destination.category}
             </Text>
           </View>
@@ -120,8 +124,8 @@ export default function DestinationDetailScreen() {
 
           <View className="flex-row justify-between mb-6 border-y border-slate-100 py-3">
             <View className="flex-row items-center flex-1">
-              <View className="w-8 h-8 rounded-lg bg-sky-50 items-center justify-center mr-2.5">
-                <Ticket size={16} color="#0EA5E9" />
+              <View className="w-8 h-8 rounded-lg bg-[#00678F]/10 items-center justify-center mr-2.5">
+                <Ticket size={16} color="#00678F" />
               </View>
               <View>
                 <Text className="font-poppins text-textSecondary text-[9px]">Tiket Masuk</Text>
@@ -152,7 +156,7 @@ export default function DestinationDetailScreen() {
               {destination.description}
             </Text>
             <TouchableOpacity onPress={() => setShowFullDesc(!showFullDesc)} activeOpacity={0.7} className="mt-1">
-              <Text className="font-poppins font-bold text-sky-500 text-[10px]">
+              <Text className="font-poppins font-bold text-[#00678F] text-[10px]">
                 {showFullDesc ? 'Sembunyikan' : 'Baca Selengkapnya'}
               </Text>
             </TouchableOpacity>
@@ -179,8 +183,8 @@ export default function DestinationDetailScreen() {
               className="bg-slate-100 rounded-2xl h-24 overflow-hidden border border-slate-200 justify-center items-center"
             >
               <View className="items-center">
-                <MapPin size={24} color="#0EA5E9" />
-                <Text className="font-poppins font-semibold text-sky-600 text-[10px] mt-1">
+                <MapPin size={24} color="#00678F" />
+                <Text className="font-poppins font-semibold text-[#00678F] text-[10px] mt-1">
                   Lihat di Peta Arah
                 </Text>
               </View>
@@ -190,7 +194,7 @@ export default function DestinationDetailScreen() {
           <View className="flex-row justify-between items-center mb-6">
             <Text className="font-poppins font-bold text-textPrimary text-xs">Ulasan Pengunjung</Text>
             <TouchableOpacity onPress={() => router.push(`/reviews/${destination.id}`)} activeOpacity={0.7}>
-              <Text className="font-poppins font-bold text-sky-500 text-[10px]">Lihat Semua</Text>
+              <Text className="font-poppins font-bold text-[#00678F] text-[10px]">Lihat Semua</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -199,7 +203,7 @@ export default function DestinationDetailScreen() {
       <View className="absolute bottom-0 inset-x-0 bg-white border-t border-slate-100 px-6 py-4 flex-row items-center justify-between shadow-lg">
         <View>
           <Text className="font-poppins text-textSecondary text-[9px]">Harga Tiket</Text>
-          <Text className="font-poppins font-bold text-sky-500 text-base mt-0.5">
+          <Text className="font-poppins font-bold text-[#00678F] text-base mt-0.5">
             {destination.ticketPrice === 0 ? 'Gratis' : `Rp ${destination.ticketPrice.toLocaleString('id-ID')}`}
           </Text>
         </View>

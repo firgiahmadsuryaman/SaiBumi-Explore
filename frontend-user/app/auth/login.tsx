@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, ScrollView, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Mail, Lock, Compass } from 'lucide-react-native';
 import { useAuth } from '../../src/context/AuthContext';
@@ -52,14 +52,14 @@ export default function LoginScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View className="items-center mb-6">
-          <View className="w-16 h-16 bg-sky-50 rounded-2xl items-center justify-center mb-3">
-            <Compass size={32} color="#0EA5E9" fill="#E0F2FE" />
+          <View className="w-16 h-16 bg-[#00678F] rounded-2xl items-center justify-center mb-3.5">
+            <Compass size={32} color="#FFFFFF" />
           </View>
           <Text className="font-poppins font-bold text-textPrimary text-2xl text-center">
             Selamat Datang
           </Text>
           <Text className="font-poppins text-textSecondary text-xs text-center mt-1">
-            Masuk untuk memulai petualangan di Lampung
+            Masuk untuk memulai petualangan di SaiBumi.
           </Text>
         </View>
 
@@ -91,18 +91,31 @@ export default function LoginScreen() {
 
         <View className="flex-row justify-end mb-6">
           <TouchableOpacity activeOpacity={0.7}>
-            <Text className="font-poppins font-medium text-xs text-sky-500">
+            <Text className="font-poppins font-semibold text-xs text-[#00678F]">
               Lupa Kata Sandi?
             </Text>
           </TouchableOpacity>
         </View>
 
-        <Button title="Masuk" onPress={handleLogin} isLoading={isLoading} className="mb-4" />
+        <Button title="Masuk  →" onPress={handleLogin} isLoading={isLoading} className="mb-4" />
         
+        <View className="flex-row items-center my-4">
+          <View className="flex-1 h-[1px] bg-slate-200" />
+          <Text className="font-poppins text-slate-400 text-[10px] mx-3 uppercase tracking-wider">atau</Text>
+          <View className="flex-1 h-[1px] bg-slate-200" />
+        </View>
+
         <Button
           title="Masuk dengan Google"
           onPress={() => Alert.alert('Informasi', 'Fitur masuk dengan Google belum tersedia')}
           variant="google"
+          icon={
+            <Image
+              source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/120px-Google_%22G%22_logo.png' }}
+              className="w-4 h-4 mr-2"
+              resizeMode="contain"
+            />
+          }
           className="mb-6"
         />
 
@@ -111,7 +124,7 @@ export default function LoginScreen() {
             Belum punya akun?{' '}
           </Text>
           <TouchableOpacity onPress={() => router.push('/auth/register')} activeOpacity={0.7}>
-            <Text className="font-poppins font-bold text-sky-500 text-xs">
+            <Text className="font-poppins font-bold text-[#00678F] text-xs">
               Daftar sekarang
             </Text>
           </TouchableOpacity>

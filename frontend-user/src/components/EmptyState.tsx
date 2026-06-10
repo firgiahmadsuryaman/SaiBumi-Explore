@@ -20,8 +20,8 @@ export default function EmptyState({
 }: EmptyStateProps) {
   return (
     <View className="flex-1 items-center justify-center p-6 bg-background my-8">
-      <View className="bg-sky-50 p-6 rounded-full mb-4">
-        {icon || <Inbox size={32} color="#0EA5E9" />}
+      <View className="bg-[#00678F]/10 p-6 rounded-full mb-4">
+        {icon || <Inbox size={32} color="#00678F" />}
       </View>
       <Text className="font-poppins font-bold text-textPrimary text-sm text-center mb-1">
         {title}

@@ -24,9 +24,8 @@ export default function SplashScreen() {
   }, [isLoading, user]);
 
   return (
-    <LinearGradient
-      colors={['#0EA5E9', '#14B8A6']}
-      className="flex-1 items-center justify-between py-20"
+    <View
+      className="flex-1 bg-white items-center justify-between py-20"
     >
       <View />
 
@@ -36,19 +35,21 @@ export default function SplashScreen() {
           className="w-24 h-24 bg-white rounded-3xl items-center justify-center mb-6"
           style={{
             shadowColor: '#000',
-            shadowOffset: { width: 0, height: 2 },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.12,
+            shadowRadius: 6,
             elevation: 5,
           }}
         >
-          <Compass size={48} color="#0EA5E9" fill="#E0F2FE" />
+          <View className="w-16 h-16 bg-[#00678F] rounded-full items-center justify-center">
+            <Compass size={36} color="#FFFFFF" />
+          </View>
         </View>
-        <Text className="font-poppins font-bold text-white text-3xl tracking-wide">
+        <Text className="font-poppins font-bold text-[#0F172A] text-3xl tracking-wide">
           SaiBumi Explore
         </Text>
         <Text
-          className="font-poppins text-white text-sm mt-2 tracking-widest uppercase"
+          className="font-poppins text-[#64748B] text-xs mt-2 tracking-widest uppercase"
           style={{ opacity: 0.9 }}
         >
           Jelajahi Keindahan Lampung
@@ -56,15 +57,15 @@ export default function SplashScreen() {
       </View>
 
       <View className="items-center">
-        <ActivityIndicator size="small" color="#FFFFFF" className="mb-2" />
+        <ActivityIndicator size="small" color="#00678F" className="mb-2" />
         <Text
-          className="font-poppins font-bold text-white text-[10px] tracking-widest uppercase"
+          className="font-poppins font-bold text-[#64748B] text-[10px] tracking-widest uppercase"
           style={{ opacity: 0.8 }}
         >
           Memuat
         </Text>
       </View>
-    </LinearGradient>
+    </View>
   );
 }
 

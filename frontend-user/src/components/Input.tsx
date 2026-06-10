@@ -40,10 +40,10 @@ export default function Input({
         collapsable={false}
         style={{
           minHeight: 48,
-          borderColor: error ? '#EF4444' : isFocused ? '#0EA5E9' : '#E2E8F0',
+          borderColor: error ? '#EF4444' : isFocused ? '#00678F' : '#E2E8F0',
           ...(isFocused
             ? {
-                shadowColor: '#0EA5E9',
+                shadowColor: '#00678F',
                 shadowOffset: { width: 0, height: 1 },
                 shadowOpacity: 0.2,
                 shadowRadius: 1.41,

@@ -35,28 +35,28 @@ export default function DestinationCard({
         className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mr-4"
         style={{ width: 170 }}
       >
-        <Image
-          source={{ uri: thumbnail }}
-          className="w-full h-28"
-          resizeMode="cover"
-        />
+        <View className="relative">
+          <Image
+            source={{ uri: thumbnail }}
+            className="w-full h-32"
+            resizeMode="cover"
+          />
+          <View className="absolute top-2 right-2 bg-white/95 px-2 py-0.5 rounded-lg flex-row items-center shadow-sm">
+            <Star size={10} color="#F59E0B" fill="#F59E0B" />
+            <Text className="font-poppins font-bold text-amber-500 text-[10px] ml-0.5">
+              {rating.toFixed(1)}
+            </Text>
+          </View>
+        </View>
         <View className="p-3">
-          <Text className="font-poppins font-semibold text-textPrimary text-xs mb-1" numberOfLines={1}>
+          <Text className="font-poppins font-bold text-textPrimary text-xs mb-1" numberOfLines={1}>
             {name}
           </Text>
-          <View className="flex-row items-center justify-between mt-1">
-            <View className="flex-row items-center flex-1 mr-1">
-              <MapPin size={10} color="#64748B" />
-              <Text className="font-poppins text-textSecondary text-[9px] ml-0.5" numberOfLines={1}>
-                {address.split(',')[1] || address}
-              </Text>
-            </View>
-            <View className="flex-row items-center bg-amber-50 px-1.5 py-0.5 rounded-lg">
-              <Star size={9} color="#F59E0B" fill="#F59E0B" />
-              <Text className="font-poppins font-bold text-amber-500 text-[9px] ml-0.5">
-                {rating.toFixed(1)}
-              </Text>
-            </View>
+          <View className="flex-row items-center mt-1">
+            <MapPin size={10} color="#64748B" />
+            <Text className="font-poppins text-textSecondary text-[9px] ml-0.5" numberOfLines={1}>
+              {address.split(',')[1] || address}
+            </Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -68,28 +68,36 @@ export default function DestinationCard({
       <TouchableOpacity
         onPress={onPress}
         activeOpacity={0.8}
-        className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-3.5 p-3 flex-row items-center"
+        className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-3.5 p-3 flex-row items-center justify-between"
       >
-        <Image
-          source={{ uri: thumbnail }}
-          className="w-18 h-18 rounded-xl"
-          resizeMode="cover"
-        />
-        <View className="flex-1 ml-3.5">
-          <Text className="font-poppins font-semibold text-textPrimary text-xs" numberOfLines={1}>
-            {name}
-          </Text>
-          <Text className="font-poppins text-textSecondary text-[10px] mt-0.5" numberOfLines={1}>
-            {address.split(',')[1] || address}
-          </Text>
-          <Text className="font-poppins font-bold text-sky-500 text-[11px] mt-1.5">
-            {formatPrice(ticketPrice)}
-          </Text>
+        <View className="flex-row items-center flex-1 mr-2">
+          <Image
+            source={{ uri: thumbnail }}
+            className="w-16 h-16 rounded-xl"
+            resizeMode="cover"
+          />
+          <View className="flex-1 ml-3.5">
+            <Text className="font-poppins font-bold text-textPrimary text-xs" numberOfLines={1}>
+              {name}
+            </Text>
+            <View className="flex-row items-center mt-1">
+              <MapPin size={10} color="#64748B" />
+              <Text className="font-poppins text-textSecondary text-[9px] ml-0.5" numberOfLines={1}>
+                {address.split(',')[0] || address}
+              </Text>
+            </View>
+          </View>
         </View>
-        <View className="flex-row items-center bg-amber-50 px-2 py-1 rounded-lg self-center">
-          <Star size={11} color="#F59E0B" fill="#F59E0B" />
-          <Text className="font-poppins font-bold text-amber-500 text-[10px] ml-0.5">
-            {rating.toFixed(1)}
+        
+        <View className="items-end">
+          <View className="flex-row items-center">
+            <Star size={12} color="#F59E0B" fill="#F59E0B" />
+            <Text className="font-poppins font-bold text-textPrimary text-[11px] ml-1">
+              {rating.toFixed(1)}
+            </Text>
+          </View>
+          <Text className="font-poppins text-textSecondary text-[9px] mt-0.5 text-right">
+            {destination.reviewsCount || 0} ulasan
           </Text>
         </View>
       </TouchableOpacity>
@@ -105,7 +113,7 @@ export default function DestinationCard({
             className="w-full h-44"
             resizeMode="cover"
           />
-          <View className="absolute top-3 left-3 bg-sky-500/80 px-2.5 py-1 rounded-full">
+          <View className="absolute top-3 left-3 bg-[#00678F]/80 px-2.5 py-1 rounded-full">
             <Text className="font-poppins text-white text-[9px] font-semibold">
               {categoryName}
             </Text>
@@ -139,7 +147,7 @@ export default function DestinationCard({
           <TouchableOpacity
             onPress={onPress}
             activeOpacity={0.8}
-            className="w-full h-10 bg-sky-500 rounded-xl items-center justify-center"
+            className="w-full h-10 bg-[#00678F] rounded-xl items-center justify-center"
           >
             <Text className="font-poppins font-semibold text-white text-xs">
               Lihat Detail
@@ -163,7 +171,7 @@ export default function DestinationCard({
           className="w-full h-48"
           resizeMode="cover"
         />
-        <View className="absolute top-3 left-3 bg-sky-500 px-3 py-1 rounded-full">
+        <View className="absolute top-3 left-3 bg-[#00678F] px-3 py-1 rounded-full">
           <Text className="font-poppins text-white text-[9px] font-semibold">
             {categoryName}
           </Text>
@@ -195,7 +203,7 @@ export default function DestinationCard({
               {address}
             </Text>
           </View>
-          <Text className="font-poppins font-bold text-sky-500 text-xs">
+          <Text className="font-poppins font-bold text-[#00678F] text-xs">
             {formatPrice(ticketPrice)}
           </Text>
         </View>

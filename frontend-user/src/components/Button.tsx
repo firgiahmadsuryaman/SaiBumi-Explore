@@ -24,17 +24,17 @@ export default function Button({
   let textStyle = 'font-poppins font-semibold text-sm';
 
   if (variant === 'primary') {
-    btnStyle += ' bg-sky-500';
+    btnStyle += ' bg-[#00678F]';
     textStyle += ' text-white';
   } else if (variant === 'secondary') {
-    btnStyle += ' bg-teal-500';
+    btnStyle += ' bg-[#14B8A6]';
     textStyle += ' text-white';
   } else if (variant === 'danger') {
     btnStyle += ' bg-red-500';
     textStyle += ' text-white';
   } else if (variant === 'outline') {
-    btnStyle += ' bg-transparent border border-sky-500';
-    textStyle += ' text-sky-500';
+    btnStyle += ' bg-transparent border border-[#00678F]';
+    textStyle += ' text-[#00678F]';
   } else if (variant === 'google') {
     btnStyle += ' bg-white border border-gray-200';
     textStyle += ' text-gray-700';
@@ -61,7 +61,7 @@ export default function Button({
       }}
     >
       {isLoading ? (
-        <ActivityIndicator color={variant === 'outline' || variant === 'google' ? '#0EA5E9' : '#FFFFFF'} />
+        <ActivityIndicator color={variant === 'outline' || variant === 'google' ? '#00678F' : '#FFFFFF'} />
       ) : (
         <View className="flex-row items-center justify-center">
           {icon && <View className="mr-2">{icon}</View>}

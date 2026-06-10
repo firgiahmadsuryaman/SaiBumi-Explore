@@ -17,58 +17,89 @@ export default function CategoryCard({
   className = '',
   showIconOnly = false,
 }: CategoryCardProps) {
-  // Map category names to icons
-  const getIcon = () => {
-    const iconSize = 24;
-    const iconColor = isActive ? '#FFFFFF' : '#0EA5E9';
+  // Map category names to icons and soft colors
+  const getCategoryTheme = () => {
+    const iconSize = 20;
+    const lowerName = name.toLowerCase();
 
-    switch (name.toLowerCase()) {
+    // Default themes
+    let iconColor = '#00678F';
+    let bgColor = '#E0F2FE'; // light blue default
+    let iconElement = <Lucide.MapPin size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+
+    switch (lowerName) {
       case 'pantai':
-        return <Lucide.Waves size={iconSize} color={iconColor} />;
+        iconColor = '#D97706'; // orange-600
+        bgColor = '#FFF3E0'; // light orange
+        iconElement = <Lucide.Waves size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+        break;
       case 'gunung':
-        return <Lucide.Mountain size={iconSize} color={iconColor} />;
+        iconColor = '#8B5A2B'; // brown-600-ish
+        bgColor = '#F3E5AB'; // light brown/yellow
+        iconElement = <Lucide.Mountain size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+        break;
       case 'air terjun':
       case 'airterjun':
-        return <Lucide.Droplet size={iconSize} color={iconColor} />;
+        iconColor = '#0D9488'; // teal-600
+        bgColor = '#E0F2F1'; // light teal
+        iconElement = <Lucide.Droplet size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+        break;
       case 'danau':
-        return <Lucide.Compass size={iconSize} color={iconColor} />;
+        iconColor = '#2563EB'; // blue-600
+        bgColor = '#E8EAF6'; // light blue/indigo
+        iconElement = <Lucide.Compass size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+        break;
       case 'budaya':
-        return <Lucide.Landmark size={iconSize} color={iconColor} />;
+        iconColor = '#E11D48'; // rose-600
+        bgColor = '#FCE7F3'; // light pink/rose
+        iconElement = <Lucide.Landmark size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+        break;
       case 'alam':
-        return <Lucide.Trees size={iconSize} color={iconColor} />;
+        iconColor = '#059669'; // emerald-600
+        bgColor = '#E8F5E9'; // light green
+        iconElement = <Lucide.Trees size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+        break;
       default:
-        return <Lucide.MapPin size={iconSize} color={iconColor} />;
+        iconColor = '#00678F';
+        bgColor = '#E0F2FE';
+        iconElement = <Lucide.MapPin size={iconSize} color={isActive ? '#FFFFFF' : iconColor} />;
+        break;
     }
+
+    return { iconColor, bgColor, iconElement };
   };
+
+  const { bgColor, iconElement } = getCategoryTheme();
 
   if (showIconOnly) {
     return (
       <TouchableOpacity
         onPress={onPress}
         activeOpacity={0.7}
-        className={`items-center justify-center p-3 rounded-2xl ${className}`}
+        className={`items-center justify-center ${className}`}
         style={{
-          minWidth: 64,
-          minHeight: 64,
-          backgroundColor: isActive ? '#0EA5E9' : '#FFFFFF',
-          borderWidth: isActive ? 0 : 1,
-          borderColor: '#F3F4F6',
-          ...(!isActive
-            ? {
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.15,
-                shadowRadius: 1.5,
-                elevation: 2,
-              }
-            : {}),
+          width: '22%',
+          marginBottom: 16,
         }}
       >
-        <View className="mb-1.5">{getIcon()}</View>
+        <View
+          className="w-12 h-12 rounded-full items-center justify-center mb-1.5"
+          style={{
+            backgroundColor: isActive ? '#00678F' : bgColor,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 1 },
+            shadowOpacity: 0.08,
+            shadowRadius: 1,
+            elevation: 1,
+          }}
+        >
+          {iconElement}
+        </View>
         <Text
-          className={`font-poppins text-[10px] font-medium mt-1 ${
-            isActive ? 'text-white' : 'text-textPrimary'
+          className={`font-poppins text-[10px] font-medium text-center ${
+            isActive ? 'text-[#00678F] font-semibold' : 'text-textPrimary'
           }`}
+          numberOfLines={1}
         >
           {name}
         </Text>
@@ -81,9 +112,9 @@ export default function CategoryCard({
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
-      className={`px-4 py-2.5 rounded-full mr-2.5 flex-row items-center ${className}`}
+      className={`px-4 py-2 rounded-full mr-2 flex-row items-center ${className}`}
       style={{
-        backgroundColor: isActive ? '#0EA5E9' : '#F3F4F6',
+        backgroundColor: isActive ? '#00678F' : '#F1F5F9',
       }}
     >
       <Text
